@@ -1,12 +1,8 @@
 import React from 'react';
 import QRSection from './components/QRSection/index';
 import RegriSection from './components/RefriSection/index';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import FrequencyCalendar from './components/FrequencyCalendar';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
@@ -14,10 +10,13 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" exact>
-            <RegriSection/>
+            <RegriSection />
           </Route>
           <Route path="/qr_scan" exact>
-            <QRSection/>
+            <QRSection />
+          </Route>
+          <Route path="/calendar" exact>
+            <FrequencyCalendar />
           </Route>
         </Switch>
         <nav>
@@ -27,6 +26,9 @@ function App() {
             </li>
             <li>
               <Link to="/qr_scan">QR scan</Link>
+            </li>
+            <li>
+              <Link to="/calendar">Calendar</Link>
             </li>
           </ul>
         </nav>
