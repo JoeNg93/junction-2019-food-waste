@@ -12,6 +12,13 @@ async function getReceiptProducts(receiptId) {
   );
   const receiptInfo = receipts.filter(receipt => receipt.Receipt === receiptId);
   const eans = receiptInfo.map(r => r.EAN);
+  const eanQuantityMapping = receiptInfo.reduce(
+    (prev, curr) => ({
+      ...prev,
+      [curr.EAN]: Number(curr.Quantity.split(',')[0]),
+    }),
+    {}
+  );
 
   let httpRes;
   httpRes = await axios({
@@ -35,7 +42,10 @@ async function getReceiptProducts(receiptId) {
     data: { eans },
   });
 
-  const products = Object.values(httpRes.data);
+  const products = Object.values(httpRes.data).map(p => ({
+    ...p,
+    quantity: eanQuantityMapping[p.ean],
+  }));
 
   return products;
 }
