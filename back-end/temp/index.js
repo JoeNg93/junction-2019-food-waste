@@ -4,19 +4,17 @@ const csv = require('csvtojson');
 const path = require('path');
 const dotenv = require('dotenv');
 
-dotenv.config({ path: path.resolve(__dirname, '../.env') });
+dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
 
-const receiptId = '420021025138844';
-
-async function main() {
+async function getReceiptProducts(receiptId) {
   const receipts = await csv({ delimiter: ';' }).fromFile(
     path.resolve(__dirname, 'recept_data.csv')
   );
   const receiptInfo = receipts.filter(receipt => receipt.Receipt === receiptId);
-  console.log('TCL: main -> receiptInfo', receiptInfo);
   const eans = receiptInfo.map(r => r.EAN);
 
-  let res = await axios({
+  let httpRes;
+  httpRes = await axios({
     method: 'GET',
     url: 'https://kesko.azure-api.net/v2/products',
     headers: {
@@ -25,12 +23,9 @@ async function main() {
     params: { ean: eans.join(',') },
   });
 
-  console.log(eans);
+  const storeId = httpRes.data[0].stores[0].id;
 
-  const storeId = res.data[0].stores[0].id;
-  console.log('TCL: main -> storeId', storeId);
-
-  res = await axios({
+  httpRes = await axios({
     method: 'POST',
     url: `https://kesko.azure-api.net/products/${storeId}`,
     headers: {
@@ -40,7 +35,15 @@ async function main() {
     data: { eans },
   });
 
-  console.log('Products: ', res.data);
+  const products = Object.values(httpRes.data);
+
+  return products;
+}
+
+async function main() {
+  const receiptId = '420021025138844';
+  const products = await getReceiptProducts(receiptId);
+  console.log(products);
 }
 
 main();
