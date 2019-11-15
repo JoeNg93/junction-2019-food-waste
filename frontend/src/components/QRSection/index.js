@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import QrReader from 'react-qr-reader';
 import { StyleSheet, css } from 'aphrodite';
-import { Button, Icon } from 'antd'
+import { Button, Icon, Modal } from 'antd'
 import { useHistory } from 'react-router-dom'
 
 const QRSection = () => {
   let history = useHistory();
-  const [result, setResult] = useState('')
+  const [visible, setVisible] = useState(false);
 
   const handleScan = (data) => {
     if (data) {
-      setResult(data)
+      setVisible(true)
     }
   }
 
@@ -18,29 +18,48 @@ const QRSection = () => {
     console.error(err)
   }
 
+  const handleCloseModal = () => {
+    setVisible(false)
+  }
+
   return (
     <>
-    <Button
-      type="primary"
-      onClick={() => history.push('/')}
-    >
-      <Icon type="left" />
-        Go back
-    </Button>
-    <div className={css(styles.QrContainer)}>
-      <QrReader
-        delay={300}
-        onError={handleError}
-        onScan={handleScan}
-        className={css(styles.QrReader)}
-        style={{height: '100%'}}
-      />
-    </div>
+      <div className={css(styles.ButtonContainer)}>
+        <Button
+          onClick={() => history.push('/')}
+        >
+          <Icon type="left" />
+            Back
+        </Button>
+      </div>
+      <div className={css(styles.QrContainer)}>
+        <QrReader
+          delay={300}
+          onError={handleError}
+          onScan={handleScan}
+          className={css(styles.QrReader)}
+          style={{height: '100%'}}
+        />
+      </div>
+        <Modal
+          title="Purchase History"
+          visible={visible}
+          footer={null}
+          onCancel={handleCloseModal}
+          style={{height: '100vh', top: 0}}
+          bodyStyle={{height: '100vh'}}
+          width={'100%'}
+        >
+          <p>Test</p>
+        </Modal>
     </>
   )
 }
 
 const styles = StyleSheet.create({
+  ButtonContainer: {
+    top: 30
+  },
   QrContainer: {
     height: '100%',
     position: 'relative',
