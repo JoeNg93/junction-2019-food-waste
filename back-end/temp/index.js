@@ -2,12 +2,10 @@ const fs = require('fs').promises;
 const axios = require('axios');
 const csv = require('csvtojson');
 const path = require('path');
-const querystring = require('querystring');
 const dotenv = require('dotenv');
 
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
-const API_KEY = process.env.KESKO_API_KEY;
 const receiptId = '420021025138844';
 
 async function main() {
@@ -22,24 +20,27 @@ async function main() {
     method: 'GET',
     url: 'https://kesko.azure-api.net/v2/products',
     headers: {
-      'Ocp-Apim-Subscription-Key': API_KEY,
+      'Ocp-Apim-Subscription-Key': process.env.KESKO_API_KEY,
     },
     params: { ean: eans.join(',') },
   });
+
+  console.log(eans);
 
   const storeId = res.data[0].stores[0].id;
   console.log('TCL: main -> storeId', storeId);
 
   res = await axios({
-    method: 'GET',
+    method: 'POST',
     url: `https://kesko.azure-api.net/products/${storeId}`,
     headers: {
-      'Ocp-Apim-Subscription-Key': API_KEY,
+      'Ocp-Apim-Subscription-Key': process.env.KESKO_API_KEY,
+      'Content-Type': 'application/json',
     },
-    body: { eans },
+    data: { eans },
   });
 
-  console.log(res.data);
+  console.log('Products: ', res.data);
 }
 
 main();
