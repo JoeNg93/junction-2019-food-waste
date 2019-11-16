@@ -60,9 +60,10 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
     setIdxFridgeProducts(_.groupBy(updatedProducts, 'id'));
   };
 
-  const removeProduct = (id) => {
-    const updatedProducts = fridgeProducts.filter(({itemId}) => {
-      itemId !== id});
+  const removeProduct = id => {
+    const updatedProducts = fridgeProducts.filter(({ itemId }) => {
+      return itemId !==s id;
+    });
     updateProducts(updatedProducts);
   };
 
