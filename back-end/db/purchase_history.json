@@ -1,19 +1,5 @@
 {
-  "products": {
-    "EAN1": {},
-    "EAN2": {}
-  },
-  "receipts": [
-    {
-      "id": "ABC",
-      "products": [
-        {
-          "ean": "EAN1",
-          "quantity": 2
-        }
-      ]
-    }
-  ],
+  "receipts": ["ABC", "DEF"],
   "product_history": {
     "EAN1": [
       {
@@ -27,5 +13,5 @@
     ],
     "EAN2": []
   },
-  "fridge": [{ "ean": "EAN1", "buy_date": "XXX" }]
+  "fridge": [{ "name": "", "id": "", "ean": "", "purchase_date": "" }]
 }
