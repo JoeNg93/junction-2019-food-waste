@@ -1,6 +1,6 @@
 import express from 'express';
 import db from '../db';
-import { FridgePostBody } from '../types';
+import { FridgePostBody, FridgePatchBody } from '../types';
 import { newId, suggestDeffaultExpDate } from '../utils';
 
 const router = express.Router();
@@ -56,6 +56,36 @@ router.delete('/:id', async (req, res) => {
 
         // Remove item from fridge
         dbData.fridge = fridge.filter(item => item.id !== id);
+
+        // Update database
+        await db.writeData(dbData);
+
+        // Return updated fridge
+        return res.status(200).send(dbData.fridge);
+    } catch (error) {
+        return res.status(500).send({ error });
+    }
+});
+
+// @PATCH /fridge/{id} -> body {expired_date, suggestedExpDate}
+router.patch('/:id', async (req, res) => {
+    try {
+        const { expired_date, suggestedExpDate } = req.body as FridgePatchBody;
+        const { id } = req.params;
+        const dbData = await db.getData();
+        const { fridge } = dbData;
+
+        // Update item info in fridge
+        dbData.fridge = fridge.map(item => {
+            if (item.id === id) {
+                return {
+                    ...item,
+                    expired_date,
+                    suggestedExpDate,
+                };
+            }
+            return item;
+        });
 
         // Update database
         await db.writeData(dbData);

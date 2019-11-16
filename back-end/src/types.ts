@@ -54,6 +54,11 @@ export interface FridgePostBody {
   products: Product[];
 }
 
+export interface FridgePatchBody {
+  expired_date: string;
+  suggestedExpDate: boolean;
+}
+
 export interface PurchaseHistory {
   [day: string]: Product;
 }
