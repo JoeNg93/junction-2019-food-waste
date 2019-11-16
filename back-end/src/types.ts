@@ -5,15 +5,15 @@ export interface Database {
 }
 
 export interface ProductHistory {
-    [ean: string]: ProductHistory[],
-}
-export interface PurchaseHistory {
-    purchase_date: string,
-    quantity: number,
+    [ean: string]: Product[],
 }
 
-export interface FridgeItem extends ProductAPI {
+export interface FridgeItem {
     id: string,
+    name: string,
+    ean: string,
+    purchase_date: string,
+
 }
 
 export interface Store {
@@ -27,15 +27,15 @@ export interface Availability {
 export interface ProductAPI {
     name: string,
     ean: string,
-    purchase_date: string,
 }
 
 export interface Product extends ProductAPI {
     quantity: number,
+    purchase_date: string,
 }
 
 export interface ProductsData {
-    [key: string]: Product,
+    [key: string]: ProductAPI,
 }
 
 export interface FridgePostBody {

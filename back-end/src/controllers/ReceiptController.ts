@@ -2,35 +2,15 @@ import express from 'express';
 import axios from 'axios';
 import csv from 'csvtojson';
 import path from 'path';
-import { promises as fs } from 'fs';
-
-interface Store {
-  id: string;
-}
-interface Availability {
-  stores: Store[];
-}
-
-interface Product {
-  quantity: number;
-  name: string;
-  ean: string;
-  purchase_date: string;
-}
-
-interface ProductsData {
-  [key: string]: Product;
-}
+import db from '../db';
+import { Availability, ProductsData, Product } from '../types';
 
 const router = express.Router();
 
 // @GET /receipts/:receiptId
 router.get('/:receiptId', async (req, res) => {
   try {
-    const dbFilePath = path.resolve(__dirname, '..', '..', 'db', 'db.json');
-
-    const dbData = JSON.parse(await fs.readFile(dbFilePath, 'utf8'));
-
+    const dbData = await db.getData();
     const { receiptId } = req.params;
 
     // Check if receipt has already been scanned
@@ -99,7 +79,7 @@ router.get('/:receiptId', async (req, res) => {
     }
 
     // Update database
-    await fs.writeFile(dbFilePath, JSON.stringify(dbData, null, 2));
+    await db.writeData(dbData);
 
     return res.status(200).send(products);
   } catch (e) {
