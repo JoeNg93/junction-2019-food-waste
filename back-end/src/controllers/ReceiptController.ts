@@ -95,6 +95,7 @@ router.get('/:receiptId', async (req, res) => {
 
     return res.status(200).send(products);
   } catch (e) {
+    console.log('error', e);
     return res.status(500).send(e);
   }
 });
