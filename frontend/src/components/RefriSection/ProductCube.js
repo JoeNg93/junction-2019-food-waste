@@ -29,8 +29,8 @@ const ProductCube = ({ name, id, openProductInfoModal, removeProduct }) => {
   };
 
   const onMouseDown = () => {
-    removeProduct(id);
-    // restartPos();
+    // removeProduct(id);
+    restartPos();
   };
 
   return (
@@ -42,7 +42,7 @@ const ProductCube = ({ name, id, openProductInfoModal, removeProduct }) => {
     >
       <div
         className={css(styles.productCube)}
-        onClick={() => openProductInfoModal(id)}
+        onClick={openProductInfoModal ? () => openProductInfoModal(id) : null}
       >
         <div className="line-clamp">{name}</div>
       </div>

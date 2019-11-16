@@ -40,7 +40,15 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
 
     return Array.from({ length: numberOfShelf }, (el, idx) => {
       if (idx === numberOfShelf - 1) {
-        return <FridgeShelf key={idx} items={products} lastShelf />;
+        return (
+          <FridgeShelf
+            key={idx}
+            items={products}
+            openProductInfoModal={openProductInfoModal}
+            removeProduct={removeProduct}
+            lastShelf
+          />
+        );
       }
 
       return (
@@ -61,10 +69,7 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
   };
 
   const removeProduct = id => {
-    const updatedProducts = fridgeProducts.filter(({ itemId }) => {
-      return itemId !== id;
-    });
-    updateProducts(updatedProducts);
+    updateProducts(fridgeProducts.filter(({ id: itemId }) => itemId !== id));
   };
 
   return (
