@@ -1,6 +1,6 @@
 import express from 'express';
 import db from '../db';
-import { PurchaseHistory } from '../types';
+import { ProductPurchaseHistoryDetail } from '../types';
 
 const router = express.Router();
 
@@ -9,20 +9,20 @@ router.get('/:productId', async (req, res) => {
   try {
     const { productId } = req.params;
     const { product_history } = await db.getData();
-    const purchase_history = Object.values(
-      product_history[productId].reduce((obj, purchase) => {
-        const purchaseDay = purchase.purchase_date.split('/')[0];
+    const purchase_history: ProductPurchaseHistoryDetail[] = Object.values(
+      product_history[productId].history.reduce((obj, his) => {
+        const purchaseDay = his.purchase_date.split('/')[0];
         if (obj[purchaseDay]) {
-          obj[purchaseDay].quantity += purchase.quantity;
+          obj[purchaseDay].quantity += his.quantity;
           return obj;
         }
-        obj[purchaseDay] = purchase;
+        obj[purchaseDay] = his;
         obj[purchaseDay].purchase_date = purchaseDay;
         return obj;
-      }, {} as PurchaseHistory)
+      }, {})
     );
     return res.status(200).send({
-      productName: purchase_history[0].name,
+      productName: product_history[productId].name,
       purchaseHistory: purchase_history.map(ph => ({
         date: ph.purchase_date,
         qty: ph.quantity,

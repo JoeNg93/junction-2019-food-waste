@@ -1,47 +1,55 @@
 export interface Database {
-    receipts: string[],
-    product_history: ProductHistory,
-    fridge: FridgeItem[],
+  receipts: string[];
+  product_history: ProductHistory;
+  fridge: FridgeItem[];
 }
 
 export interface ProductHistory {
-    [ean: string]: Product[],
+  [ean: string]: ProductPurchaseHistory;
 }
 
 export interface FridgeItem {
-    id: string,
-    name: string,
-    ean: string,
-    purchase_date: string,
-
+  id: string;
+  name: string;
+  ean: string;
+  purchase_date: string;
 }
 
 export interface Store {
-    id: string,
+  id: string;
 }
 
 export interface Availability {
-    stores: Store[],
+  stores: Store[];
 }
 
 export interface ProductAPI {
-    name: string,
-    ean: string,
+  name: string;
+  ean: string;
 }
 
 export interface Product extends ProductAPI {
-    quantity: number,
-    purchase_date: string,
+  quantity: number;
+  purchase_date: string;
+}
+
+export interface ProductPurchaseHistoryDetail {
+  quantity: number;
+  purchase_date: string;
+}
+
+export interface ProductPurchaseHistory extends ProductAPI {
+  history: ProductPurchaseHistoryDetail[];
 }
 
 export interface ProductsData {
-    [key: string]: ProductAPI,
+  [key: string]: ProductAPI;
 }
 
 export interface FridgePostBody {
-    products: Product[],
+  products: Product[];
 }
 
 export interface PurchaseHistory {
-    [day: string]: Product,
+  [day: string]: Product;
 }
