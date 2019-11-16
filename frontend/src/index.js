@@ -6,7 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import {
   BrowserRouter as Router,
 } from "react-router-dom";
+import {initiateAxiosConfig} from './axiosConfig';
 
+initiateAxiosConfig();
 ReactDOM.render(
   <Router>
     <App />
