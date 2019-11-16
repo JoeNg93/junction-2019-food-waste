@@ -12,14 +12,15 @@ router.get('/:receiptId', async (req, res) => {
   try {
     const dbData = await db.getData();
     const { receiptId } = req.params;
+    const { storeId } = req.query;
 
     // Check if receipt has already been scanned
-    if (dbData.receipts.find(id => id === receiptId)) {
-      // Receipt id already existed
-      return res
-        .status(400)
-        .send({ error: `Receipt id ${receiptId} has already been scanned.` });
-    }
+    // if (dbData.receipts.find(id => id === receiptId)) {
+    //   // Receipt id already existed
+    //   return res
+    //     .status(400)
+    //     .send({ error: `Receipt id ${receiptId} has already been scanned.` });
+    // }
 
     // Save receipt id to db
     dbData.receipts.push(receiptId);
@@ -31,6 +32,7 @@ router.get('/:receiptId', async (req, res) => {
     const receiptInfo = receipts.filter(
       receipt => receipt.Receipt === receiptId
     );
+    console.log('TCL: receiptInfo', receiptInfo);
     const eans = receiptInfo.map(r => r.EAN);
     const eanQuantityMapping = receiptInfo.reduce(
       (prev, curr) => ({
@@ -40,16 +42,7 @@ router.get('/:receiptId', async (req, res) => {
       {}
     );
 
-    const availability = await axios({
-      method: 'GET',
-      url: 'https://kesko.azure-api.net/v2/products',
-      headers: {
-        'Ocp-Apim-Subscription-Key': process.env.KESKO_API_KEY,
-      },
-      params: { ean: eans.join(',') },
-    }).then(res => res.data[0] as Availability);
-
-    const storeId = availability.stores[0].id;
+    console.log('TCL: storeId', storeId);
 
     const productsData = await axios({
       method: 'POST',
@@ -59,9 +52,11 @@ router.get('/:receiptId', async (req, res) => {
         'Content-Type': 'application/json',
       },
       data: { eans },
-    }).then(res => res.data as ProductsData);
+    }).then(res => res.data);
 
-    const products: Product[] = Object.values(productsData).map(p => ({
+    console.log('TCL: productsData', productsData);
+
+    const products = Object.values(productsData).map((p: any) => ({
       name: p.name,
       ean: p.ean,
       quantity: eanQuantityMapping[p.ean],
@@ -71,13 +66,13 @@ router.get('/:receiptId', async (req, res) => {
 
     // Save product history
     for (let product of products) {
-      if (dbData.product_history[product.ean]) {
-        dbData.product_history[product.ean].history.push({
+      if (dbData.product_history[product.name]) {
+        dbData.product_history[product.name].history.push({
           quantity: product.quantity,
           purchase_date: product.purchase_date,
         });
       } else {
-        dbData.product_history[product.ean] = {
+        dbData.product_history[product.name] = {
           name: product.name,
           ean: product.ean,
           history: [
@@ -95,6 +90,7 @@ router.get('/:receiptId', async (req, res) => {
 
     return res.status(200).send(products);
   } catch (e) {
+    console.log('error', e);
     return res.status(500).send(e);
   }
 });

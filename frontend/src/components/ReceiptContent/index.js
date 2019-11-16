@@ -78,7 +78,7 @@ const ReceiptContent = ({productList, selectProducts}) => {
   });
   return (
     <>
-      <Table pagination={false} rowSelection={rowSelection} columns={columns} dataSource={data} />
+      <Table pagination={false} rowSelection={rowSelection} columns={columns} dataSource={data}/>
     </>
   )
 }

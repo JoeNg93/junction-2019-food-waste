@@ -11,6 +11,7 @@ import { FaUserCog } from 'react-icons/fa';
 import { MdContentPaste, MdRestaurantMenu, MdPerson } from 'react-icons/md';
 import { ReactComponent as FridgeIcon } from './assets/fridge_icon.svg';
 import { StyleSheet, css } from 'aphrodite';
+import RecipeSection from './components/RecipeSection/index'
 
 const NavBar = () => {
   const [selectedTab, setSelectedTab] = useState('blueTab');
@@ -152,6 +153,10 @@ function App() {
         <Route path="/qr_scan" exact>
           <QRSection />
         </Route>
+        <Route path="/recipes" exact>
+          <RecipeSection />
+        </Route>
+
       </Switch>
       <NavBar />
     </>

@@ -9,10 +9,35 @@ import FridgeContainer from './FridgeContainer';
 const RegriSection = () => {
   let history = useHistory();
 
+  useEffect(() => {
+    requestNotificationPermission();
+  }, []);
+
+  const requestNotificationPermission = async () => {
+    // Some browsers don't support Notification yet. I'm looking at you iOS Safari
+    if ("Notification" in window) {
+      if (
+        Notification.permission !== "denied" &&
+        Notification.permission !== "granted"
+      ) {
+        Notification.requestPermission();
+      }
+    }
+  };
+
+  const sendPushNotification = () => {
+    if ("Notification" in window && Notification.permission === "granted") {
+      setTimeout(new Notification("Your milk will be expired today!"), 5000);
+    }
+  };
+
   return (
     <div className={css(styles.pageContainer)}>
       <div className={css(styles.content)}>
-        <h1 className={css(styles.title)}>Your fridge</h1>
+        <div className={css(styles.titleContainer)}>
+          <h1 className={css(styles.title)}>Your fridge</h1>
+          <div className={css(styles.invisibleBtn)} onClick={sendPushNotification}/>
+        </div>
         <FridgeContainer />
       </div>
     </div>
@@ -20,6 +45,14 @@ const RegriSection = () => {
 };
 
 const styles = StyleSheet.create({
+  titleContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  invisibleBtn: {
+    height: 42,
+    width: 80,
+  },
   pageContainer: {
     height: '100%',
     display: 'flex',

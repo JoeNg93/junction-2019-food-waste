@@ -1,5 +1,6 @@
 import express from 'express';
 import db from '../db';
+import axios from 'axios';
 import { ProductPurchaseHistoryDetail } from '../types';
 
 const router = express.Router();
@@ -8,9 +9,23 @@ const router = express.Router();
 router.get('/:productId', async (req, res) => {
   try {
     const { productId } = req.params;
+    const { storeId } = req.query;
+
+    const productInfo = await axios({
+      method: 'GET',
+      url: `https://kesko.azure-api.net/products/${storeId}/${productId}`,
+      headers: {
+        'Ocp-Apim-Subscription-Key': process.env.KESKO_API_KEY,
+      },
+    }).then(res => res.data);
+
+    console.log('TCL: productInfo', productInfo);
+
+    const productName = productInfo.name;
+
     const { product_history } = await db.getData();
     const purchase_history: ProductPurchaseHistoryDetail[] = Object.values(
-      product_history[productId].history.reduce((obj, his) => {
+      product_history[productName].history.reduce((obj, his) => {
         const purchaseDay = his.purchase_date.split('/')[0];
         if (obj[purchaseDay]) {
           obj[purchaseDay].quantity += his.quantity;
@@ -21,8 +36,9 @@ router.get('/:productId', async (req, res) => {
         return obj;
       }, {})
     );
+
     return res.status(200).send({
-      productName: product_history[productId].name,
+      productName: productName,
       purchaseHistory: purchase_history.map(ph => ({
         date: ph.purchase_date,
         qty: ph.quantity,
