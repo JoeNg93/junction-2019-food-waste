@@ -2,6 +2,7 @@ import express from 'express';
 import db from '../db';
 import { FridgePostBody, FridgePatchBody } from '../types';
 import { newId, suggestDeffaultExpDate } from '../utils';
+import moment from 'moment';
 
 const router = express.Router();
 
@@ -9,7 +10,9 @@ const router = express.Router();
 router.get('/', async (req, res) => {
   try {
     const { fridge } = await db.getData();
-    return res.status(200).send(fridge);
+    return res.status(200).send(fridge.sort((a, b) =>
+        moment(a.expired_date).valueOf() - moment(b.expired_date).valueOf()
+    ));
   } catch (e) {
     return res.status(500).send(e);
   }
