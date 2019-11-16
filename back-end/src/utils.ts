@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export const newId = (): string => {
     const chars =
         'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -10,3 +12,8 @@ export const newId = (): string => {
     }
     return autoId;
 };
+
+export const suggestDeffaultExpDate = (purchase_date: string) =>
+    moment(purchase_date.split('/')[0])
+        .add(Math.round(Math.random() * 5 + 5), 'days')
+        .format('YYYY-MM-DD');

@@ -5,21 +5,23 @@ import { Button, Icon, Modal } from 'antd';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import FrequencyCalendar from '../../components/FrequencyCalendar';
-import ReceiptContent from '../../components/ReceiptContent/index'
+import ReceiptContent from '../../components/ReceiptContent/index';
+import style from '../../constants/styleVariables';
+
 const mockData = [
   {
-      name: "Tölkkipantti 0,15 eur kaikki koot",
-      ean: "2000973900008",
-      quantity: 10,
-      purchase_date: "2019-01-30/18"
+    name: 'Tölkkipantti 0,15 eur kaikki koot',
+    ean: '2000973900008',
+    quantity: 10,
+    purchase_date: '2019-01-30/18'
   },
   {
-      name: "Bonus savuketupakka 30g Vaalea Klassikko",
-      ean: "6410105909063",
-      quantity: 2,
-      purchase_date: "2019-01-30/18"
+    name: 'Bonus savuketupakka 30g Vaalea Klassikko',
+    ean: '6410105909063',
+    quantity: 2,
+    purchase_date: '2019-01-30/18'
   }
-]
+];
 const QRSection = () => {
   let history = useHistory();
   const [receiptVisible, setReceiptVisible] = useState(true);
@@ -32,14 +34,15 @@ const QRSection = () => {
     if (data) {
       let dataObj = JSON.parse(data);
       if (dataObj.type === 'receipt') {
-        const receiptRes = await axios.get(`/receipts/${dataObj.result}`)
-        setReceiptVisible(true)
-        setReceiptData(receiptRes.data)
-
+        const receiptRes = await axios.get(`/receipts/${dataObj.result}`);
+        setReceiptVisible(true);
+        setReceiptData(receiptRes.data);
       } else {
-        const productPurchaseHistoryRes = await axios.get(`/purchase-history/${dataObj.result}`)
-        setPurchaseHistoryVisible(true)
-        setPurchaseHistoryData(productPurchaseHistoryRes.data)
+        const productPurchaseHistoryRes = await axios.get(
+          `/purchase-history/${dataObj.result}`
+        );
+        setPurchaseHistoryVisible(true);
+        setPurchaseHistoryData(productPurchaseHistoryRes.data);
       }
     }
   };
@@ -66,11 +69,14 @@ const QRSection = () => {
   };
 
   return (
-    <div>
-      <div className={css(styles.ButtonContainer)}>
-        <Button onClick={() => history.push('/')}>
-          <Icon type="left" />
-          Back
+    <div className={css(styles.pageContainer)}>
+      <div className={css(styles.header)}>
+        <Button
+          onClick={() => history.push('/')}
+          style={{ border: 'none', background: 'transparent', color: 'white' }}
+        >
+          <Icon type="left" style={{fontSize: 18}}/>
+          <span style={{fontSize: 18, fontWeight: 600}}>Back</span>
         </Button>
       </div>
       <div className={css(styles.QrContainer)}>
@@ -93,7 +99,7 @@ const QRSection = () => {
       >
         {purchaseHistoryData && (
           <>
-            <FrequencyCalendar purchaseHistoryData={purchaseHistoryData}/>
+            <FrequencyCalendar purchaseHistoryData={purchaseHistoryData} />
           </>
         )}
       </Modal>
@@ -109,20 +115,35 @@ const QRSection = () => {
         {receiptData && (
           <>
             <ReceiptContent
-              selectProducts={(selectedProducts) => setSelectedProducts(selectedProducts)}
+              selectProducts={selectedProducts =>
+                setSelectedProducts(selectedProducts)
+              }
               productList={receiptData}
             />
           </>
         )}
       </Modal>
+      <div className={css(styles.footer)} />
     </div>
   );
 };
 
 const styles = StyleSheet.create({
-
-  ButtonContainer: {
-    top: 30
+  pageContainer: {
+    background: style.backgroundColor,
+    height: '100%'
+  },
+  header: {
+    top: 30,
+    padding: '10px 6px',
+    background: style.primaryColor
+  },
+  footer: {
+    position: 'absolute',
+    bottom: 0,
+    height: 50,
+    width: '100%',
+    background: style.primaryColor
   },
   QrContainer: {
     height: '100%',

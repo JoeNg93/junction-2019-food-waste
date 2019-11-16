@@ -84,5 +84,30 @@
       ]
     }
   },
-  "fridge": []
+  "fridge": [
+    {
+      "id": "wekq8rg5waODqlEWz3gL",
+      "ean": "6410405224538",
+      "name": "Pirkka Essi Tuottajalle kiitos mkassi TK",
+      "purchase_date": "2019-01-30/18",
+      "expired_date": "2019-02-06",
+      "suggestedExpDate": true
+    },
+    {
+      "id": "qtvrqX8kujMw7Dw0EBpS",
+      "ean": "6410405224538",
+      "name": "Pirkka Essi Tuottajalle kiitos mkassi TK",
+      "purchase_date": "2019-01-30/18",
+      "expired_date": "2019-02-08",
+      "suggestedExpDate": false
+    },
+    {
+      "id": "6eD7S9HkxwME564xPOgm",
+      "ean": "6410405224538",
+      "name": "Pirkka Essi Tuottajalle kiitos mkassi TK",
+      "purchase_date": "2019-01-30/18",
+      "expired_date": "2019-02-08",
+      "suggestedExpDate": true
+    }
+  ]
 }

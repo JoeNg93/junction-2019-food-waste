@@ -8,24 +8,12 @@ import FridgeContainer from './FridgeContainer';
 
 const RegriSection = () => {
   let history = useHistory();
+
   return (
     <div className={css(styles.pageContainer)}>
       <div className={css(styles.content)}>
         <h1 className={css(styles.title)}>Your fridge</h1>
         <FridgeContainer />
-      </div>
-      <div
-        className={css(styles.cameraNavWrapper)}
-        onClick={() => history.push('/qr_scan')}
-      >
-        <TiCamera
-          style={{
-            fontSize: 45,
-            color: 'white',
-            position: 'relative',
-            top: -4
-          }}
-        />
       </div>
     </div>
   );
