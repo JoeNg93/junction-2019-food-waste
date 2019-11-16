@@ -24,3 +24,10 @@ code {
 .ant-table-wrapper .ant-table-tbody > tr > td {
   padding: 4px 4px;
 }
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
