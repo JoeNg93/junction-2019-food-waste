@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import style from '../../constants/styleVariables';
+import _ from 'lodash';
 import Draggable from 'react-draggable';
 
 const ProductCube = ({ name, id, openProductInfoModal, removeProduct }) => {
@@ -26,10 +27,14 @@ const ProductCube = ({ name, id, openProductInfoModal, removeProduct }) => {
       x: x + ui.deltaX,
       y: y + ui.deltaY
     });
+    setTimeout(onDrag, 500)
   };
 
-  const onMouseDown = () => {
-    // removeProduct(id);
+  const onDrag = () => {
+    const {x, y} = deltaPosition;
+    if (x > 50 || x < -50 || y > 50 || y < -50) {
+      return removeProduct(id);
+    }
     restartPos();
   };
 
@@ -38,7 +43,7 @@ const ProductCube = ({ name, id, openProductInfoModal, removeProduct }) => {
       position={controlledPosition}
       onstart={onStart}
       onStop={onStop}
-      onMouseDown={onMouseDown}
+      onDrag={handleDrag}
     >
       <div
         className={css(styles.productCube)}
