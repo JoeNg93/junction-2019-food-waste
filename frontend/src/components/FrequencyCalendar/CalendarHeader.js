@@ -9,9 +9,6 @@ const CalendarHeader = ({
   focusToday,
   renderPurchaseMessage
 }) => {
-  const current = value.clone(),
-    localeData = value.localeData();
-
   const [month, setMonth] = useState(value.month());
   const [year, setYear] = useState(value.year());
 

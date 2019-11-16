@@ -5,20 +5,20 @@ import CalendarHeader from './CalendarHeader';
 
 const data = {
   productName: 'Pringle',
-    purchaseHistory: [
-        {
-            date: '2019-10-23',
-            qty: 4
-        },
-        {
-            date: '2019-11-11',
-            qty: 3
-        },
-        {
-            date: '2019-11-06',
-            qty: 5
-        }
-    ]
+  purchaseHistory: [
+    {
+      date: '2019-10-23',
+      qty: 4
+    },
+    {
+      date: '2019-11-11',
+      qty: 3
+    },
+    {
+      date: '2019-11-06',
+      qty: 5
+    }
+  ]
 };
 
 const FrequencyCalendar = () => {
@@ -44,16 +44,16 @@ const FrequencyCalendar = () => {
     setValue(moment(Date.now()));
   };
 
-  const renderPurchaseMessage = (value) => {
+  const renderPurchaseMessage = value => {
     const { productName, purchaseHistory } = data;
     const totalQtyByMonth = purchaseHistory.reduce((sum, item) => {
       if (value.isSame(moment(item.date), 'month')) {
         sum += item.qty;
       }
       return sum;
-      }, 0);
+    }, 0);
 
-    return `You have brought ${totalQtyByMonth} ${productName} this month.`
+    return `You have brought ${totalQtyByMonth} ${productName} this month.`;
   };
 
   return (
