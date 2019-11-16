@@ -1,3 +1,6 @@
+const util = require('util');
+util.inspect.defaultOptions.depth = null;
+
 const fs = require('fs').promises;
 const axios = require('axios');
 const csv = require('csvtojson');
@@ -12,6 +15,7 @@ async function getReceiptProducts(receiptId) {
   );
   const receiptInfo = receipts.filter(receipt => receipt.Receipt === receiptId);
   const eans = receiptInfo.map(r => r.EAN);
+  console.log('TCL: getReceiptProducts -> eans', eans);
   const eanQuantityMapping = receiptInfo.reduce(
     (prev, curr) => ({
       ...prev,
@@ -31,6 +35,7 @@ async function getReceiptProducts(receiptId) {
   });
 
   const storeId = httpRes.data[0].stores[0].id;
+  console.log('TCL: getReceiptProducts -> storeId', storeId);
 
   httpRes = await axios({
     method: 'POST',
@@ -47,7 +52,11 @@ async function getReceiptProducts(receiptId) {
     quantity: eanQuantityMapping[p.ean],
   }));
 
-  return products;
+  return products.map(p => ({
+    name: p.name,
+    ean: p.ean,
+    quantity: p.quantity,
+  }));
 }
 
 async function main() {

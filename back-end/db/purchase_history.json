@@ -13,5 +13,7 @@
     ],
     "EAN2": []
   },
-  "fridge": [{ "name": "", "id": "", "ean": "", "purchase_date": "" }]
+  "fridge": [
+    { "name": "", "id": "", "ean": "", "purchase_date": "yyyy-mm-dd/hh" }
+  ]
 }
