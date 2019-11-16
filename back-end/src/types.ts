@@ -1,0 +1,43 @@
+export interface Database {
+    receipts: string[],
+    product_history: ProductHistory,
+    fridge: FridgeItem[],
+}
+
+export interface ProductHistory {
+    [ean: string]: Product[],
+}
+
+export interface FridgeItem {
+    id: string,
+    name: string,
+    ean: string,
+    purchase_date: string,
+
+}
+
+export interface Store {
+    id: string,
+}
+
+export interface Availability {
+    stores: Store[],
+}
+
+export interface ProductAPI {
+    name: string,
+    ean: string,
+}
+
+export interface Product extends ProductAPI {
+    quantity: number,
+    purchase_date: string,
+}
+
+export interface ProductsData {
+    [key: string]: ProductAPI,
+}
+
+export interface FridgePostBody {
+    products: Product[],
+}

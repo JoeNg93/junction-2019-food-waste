@@ -6,8 +6,9 @@
   "scripts": {
     "start": "node dist/index.js",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
-    "build": "tsc && npm run tslint",
-    "dev": "concurrently -k -p \"[{name}]\" -n \"TSC,Node\" -c \"yellow.bold,green.bold\" \"tsc -w\" \"nodemon dist/index.js\""
+    "build": "tsc && npm run copy:data && npm run tslint",
+    "copy:data": "cp -r src/data dist/",
+    "dev": "concurrently -k -p \"[{name}]\" -n \"TSC,Node\" -c \"yellow.bold,green.bold\" \"tsc -w\" \"npm run copy:data && nodemon dist/index.js\""
   },
   "keywords": [],
   "author": "",
