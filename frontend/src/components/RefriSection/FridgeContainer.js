@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, css } from 'aphrodite';
+import { Modal } from 'antd';
 import FridgeShelf from './FridgeShelf';
 import data from './mockData';
 import style from '../../constants/styleVariables';
 
 const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
+  const [productInfoModalVisible, setProductInfoModalVisible] = useState(false);
+
+  const openProductInfoModal = () => {
+    setProductInfoModalVisible(true);
+  };
+
+  const closeProductInfoModal = () => {
+    setProductInfoModalVisible(false);
+  };
+
   const renderFridgeShelf = () => {
     const products = [...data];
 
@@ -17,6 +28,7 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
         <FridgeShelf
           key={idx}
           items={products.splice(0, shelfCapacity)}
+          openProductInfoModal={openProductInfoModal}
           hasBorder
         />
       );
@@ -26,6 +38,15 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
   return (
     <div className={css(styles.fridgeVisualWrapper)}>
       <div className={css(styles.fridgeContainer)}>{renderFridgeShelf()}</div>
+      <Modal
+        title={'Product Info'}
+        visible={productInfoModalVisible}
+        onCancel={closeProductInfoModal}
+        style={{ height: '100vh', top: 0 }}
+        bodyStyle={{ height: '100vh' }}
+        width={'100%'}
+      >
+      </Modal>
     </div>
   );
 };
