@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import ReceiptController from './controllers/ReceiptController';
 import FridgeController from './controllers/FridgeController';
+import PurchaseHistoryController from './controllers/PurchaseHistoryController';
 
 // Populate env vars from .env file
 dotenv.config();
@@ -13,6 +14,7 @@ app.use(cors());
 
 app.use('/receipts', ReceiptController);
 app.use('/fridge', FridgeController);
+app.use('/purchase-history', PurchaseHistoryController);
 
 app.get('/*', (req, res) => {
   res.send('pongsss');
