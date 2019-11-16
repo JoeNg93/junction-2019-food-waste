@@ -2,22 +2,24 @@ import express from 'express';
 import axios from 'axios';
 import csv from 'csvtojson';
 import path from 'path';
+import { promises as fs } from 'fs';
 
 interface Store {
-  id: string,
+  id: string;
 }
 interface Availability {
-  stores: Store[],
+  stores: Store[];
 }
 
 interface Product {
-  quantity: number,
-  name: string,
-  ean: string,
+  quantity: number;
+  name: string;
+  ean: string;
+  purchase_date: string;
 }
 
 interface ProductsData {
-  [key: string]: Product,
+  [key: string]: Product;
 }
 
 const router = express.Router();
@@ -25,11 +27,30 @@ const router = express.Router();
 // @GET /receipts/:receiptId
 router.get('/:receiptId', async (req, res) => {
   try {
+    const dbFilePath = path.resolve(__dirname, '..', '..', 'db', 'db.json');
+
+    const dbData = JSON.parse(await fs.readFile(dbFilePath, 'utf8'));
+
     const { receiptId } = req.params;
+
+    // Check if receipt has already been scanned
+    if (dbData.receipts.find(id => id === receiptId)) {
+      // Receipt id already existed
+      return res
+        .status(400)
+        .send({ error: `Receipt id ${receiptId} has already been scanned.` });
+    }
+
+    // Save receipt id to db
+    dbData.receipts.push(receiptId);
+
+    // Get info of products inside receipt
     const receipts = await csv({ delimiter: ';' }).fromFile(
       path.resolve(__dirname, '../data/recept_data.csv')
     );
-    const receiptInfo = receipts.filter(receipt => receipt.Receipt === receiptId);
+    const receiptInfo = receipts.filter(
+      receipt => receipt.Receipt === receiptId
+    );
     const eans = receiptInfo.map(r => r.EAN);
     const eanQuantityMapping = receiptInfo.reduce(
       (prev, curr) => ({
@@ -61,10 +82,26 @@ router.get('/:receiptId', async (req, res) => {
     }).then(res => res.data as ProductsData);
 
     const products: Product[] = Object.values(productsData).map(p => ({
-      ...p,
+      name: p.name,
+      ean: p.ean,
       quantity: eanQuantityMapping[p.ean],
+      purchase_date:
+        receiptInfo[0].TransactionDate + '/' + receiptInfo[0].BeginHour,
     }));
-    return res.status(200).send({ products });
+
+    // Save product history
+    for (let product of products) {
+      if (dbData.product_history[product.ean]) {
+        dbData.product_history[product.ean].push(product);
+      } else {
+        dbData.product_history[product.ean] = [product];
+      }
+    }
+
+    // Update database
+    await fs.writeFile(dbFilePath, JSON.stringify(dbData, null, 2));
+
+    return res.status(200).send(products);
   } catch (e) {
     return res.status(500).send(e);
   }
