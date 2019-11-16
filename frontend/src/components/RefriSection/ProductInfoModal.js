@@ -1,13 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import style from '../../constants/styleVariables';
+import { DatePicker } from 'antd';
+import moment from 'moment';
+import axios from 'axios';
 
 const ProductInfoModal = ({
   name,
+  id,
   purchase_date,
   expired_date,
-  suggestedExpDate
+  suggestedExpDate,
+  updateProducts
 }) => {
+  const dateFormat = 'YYYY-MM-DD';
+  const [expiryDate, setExpiryDate] = useState(expired_date)
+  const expireDateChange = async (date, dateString) => {
+    const expiryDateChangeRes = await axios.patch(`/fridge/${id}`, {
+      expired_date: dateString,
+      suggestedExpDate: false
+    })
+    setExpiryDate(dateString)
+    updateProducts(expiryDateChangeRes.data)
+  }
   return (
     <div>
       <div className={css(styles.productImageWrapper)}>
@@ -32,7 +47,13 @@ const ProductInfoModal = ({
         <div className={css(styles.sectionTitle)}>{`${
           suggestedExpDate ? 'Suggested expiry' : 'Expiry'
         } date`}</div>
-        <div className={css(styles.sectionValue)}>{expired_date}</div>
+        <div className={css(styles.sectionValue)}>
+          <DatePicker
+            value={moment(expiryDate, dateFormat)}
+            format={dateFormat}
+            onChange={expireDateChange}
+          />
+        </div>
       </div>
     </div>
   );
