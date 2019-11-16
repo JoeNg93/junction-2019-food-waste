@@ -17,7 +17,7 @@ const FridgeShelf = ({ items, lastShelf, openProductInfoModal }) => {
             className={css(styles.productCube)}
             onClick={() => openProductInfoModal(id)}
           >
-            {name}
+            <div className="line-clamp">{name}</div>
           </div>
         ))}
     </div>
@@ -43,12 +43,13 @@ const styles = StyleSheet.create({
     height: 60,
     padding: 6,
     borderRadius: 3,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    overflowWrap: 'break-word',
+    wordWrap: 'break-word',
+    hyphens: 'auto',
     background: style.primaryColor,
     color: 'white',
-    margin: '5px 6px'
+    margin: '5px 6px',
+    overflow: 'hidden',
   }
 });
 
