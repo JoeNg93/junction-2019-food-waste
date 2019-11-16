@@ -2,17 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import style from '../../constants/styleVariables';
 
-const FridgeShelf = ({ items, hasBorder }) => {
+const FridgeShelf = ({ items, lastShelf }) => {
   return (
     <div
       className={css(
         styles.fridgeShelfContainer,
-        hasBorder && styles.shelfBorder
+        lastShelf && styles.lastShelf
       )}
     >
       {items &&
-        items.map(({ productName }) => (
-          <div className={css(styles.productCube)}>{productName}</div>
+        items.map(({ productName }, idx) => (
+          <div key={idx} className={css(styles.productCube)}>
+            {productName}
+          </div>
         ))}
     </div>
   );
@@ -20,16 +22,17 @@ const FridgeShelf = ({ items, hasBorder }) => {
 
 const styles = StyleSheet.create({
   fridgeShelfContainer: {
-    background: '#f8f8f8',
+    background: '#fff',
     flex: 1,
-    padding: 20,
+    padding: 12,
     display: 'flex',
     flexWrap: 'wrap',
-    alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    border: `1px solid ${style.primaryColor}`,
+    borderRadius: 6
   },
-  shelfBorder: {
-    borderBottom: '1px solid #d8d8d8'
+  lastShelf: {
+    borderBottomWidth: 2
   },
   productCube: {
     width: 60,
@@ -41,8 +44,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     background: style.primaryColor,
     color: 'white',
-    marginRight: 12,
-    marginBottom: 10
+    margin: '5px 6px',
   }
 });
 
