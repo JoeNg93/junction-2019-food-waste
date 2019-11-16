@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Icon } from 'antd';
+import { TiCamera } from 'react-icons/ti';
 import { StyleSheet, css } from 'aphrodite';
 import { useHistory } from 'react-router-dom';
-import style from "../../constants/styleVariables";
+import style from '../../constants/styleVariables';
 import FridgeContainer from './FridgeContainer';
 
 const RegriSection = () => {
@@ -13,12 +14,19 @@ const RegriSection = () => {
         <h1 className={css(styles.title)}>Your fridge</h1>
         <FridgeContainer />
       </div>
-      <Icon
-        className={css(styles.fixedFooter)}
-        type="camera"
+      <div
+        className={css(styles.cameraNavWrapper)}
         onClick={() => history.push('/qr_scan')}
-        style={{ fontSize: 50 }}
-      />
+      >
+        <TiCamera
+          style={{
+            fontSize: 45,
+            color: 'white',
+            position: 'relative',
+            top: -4
+          }}
+        />
+      </div>
     </div>
   );
 };
@@ -32,25 +40,33 @@ const styles = StyleSheet.create({
     paddingTop: 40,
     paddingLeft: 28,
     paddingRight: 28,
-    background: style.backgroundColor,
+    background: style.backgroundColor
   },
   content: {
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
-    height: '100%',
+    height: '100%'
   },
   title: {
     marginBottom: 32,
     color: style.primaryTextColor,
     fontWeight: 600
   },
-  fixedFooter: {
+  cameraNavWrapper: {
     position: 'fixed',
-    left: 0,
-    bottom: 0,
-    width: '100%',
-    textAlign: 'center'
+    left: '50%',
+    marginLeft: '-40px',
+    bottom: -12,
+    textAlign: 'center',
+    width: 80,
+    height: 80,
+    borderRadius: '100%',
+    background: style.primaryColor,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    cursor: 'pointer'
   }
 });
 

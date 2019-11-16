@@ -52,7 +52,7 @@ const QRSection = () => {
   };
 
   return (
-    <>
+    <div>
       <div className={css(styles.ButtonContainer)}>
         <Button onClick={() => history.push('/')}>
           <Icon type="left" />
@@ -94,11 +94,12 @@ const QRSection = () => {
       >
         {receiptData && <h1>This is receipt data</h1>}
       </Modal>
-    </>
+    </div>
   );
 };
 
 const styles = StyleSheet.create({
+
   ButtonContainer: {
     top: 30
   },
