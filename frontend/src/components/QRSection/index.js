@@ -16,13 +16,18 @@ const QRSection = () => {
     if (data) {
       let dataObj = JSON.parse(data)
       if (dataObj.type === 'receipt') {
-        const receiptRes = await axios.get(`/receipt/${dataObj.result}`)
+        // const receiptRes = await axios.get(`/receipt/${dataObj.result}`)
+        // setReceiptVisible(true)
+        // setReceiptData(receiptRes.data)
         setReceiptVisible(true)
-        setReceiptData(receiptRes.data)
+        setReceiptData('abc')
+
       } else {
-        const productPurchaseHistoryRes = await axios.get(`/products/${dataObj.result}/purchase-history`)
+        // const productPurchaseHistoryRes = await axios.get(`/products/${dataObj.result}/purchase-history`)
+        // setPurchaseHistoryVisible(true)
+        // setPurchaseHistoryData(productPurchaseHistoryRes.data)
         setPurchaseHistoryVisible(true)
-        setPurchaseHistoryData(productPurchaseHistoryRes.data)
+        setPurchaseHistoryData('abc')
       }
     }
   }
