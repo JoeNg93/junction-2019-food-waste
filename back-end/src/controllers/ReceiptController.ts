@@ -72,9 +72,21 @@ router.get('/:receiptId', async (req, res) => {
     // Save product history
     for (let product of products) {
       if (dbData.product_history[product.ean]) {
-        dbData.product_history[product.ean].push(product);
+        dbData.product_history[product.ean].history.push({
+          quantity: product.quantity,
+          purchase_date: product.purchase_date,
+        });
       } else {
-        dbData.product_history[product.ean] = [product];
+        dbData.product_history[product.ean] = {
+          name: product.name,
+          ean: product.ean,
+          history: [
+            {
+              quantity: product.quantity,
+              purchase_date: product.purchase_date,
+            },
+          ],
+        };
       }
     }
 
