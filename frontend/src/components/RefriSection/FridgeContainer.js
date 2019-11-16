@@ -54,6 +54,11 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
     });
   };
 
+  const updateProducts = (updatedProducts) => {
+    setFridgeProducts(updatedProducts);
+    setIdxFridgeProducts(_.groupBy(updatedProducts, 'id'));
+  }
+
   return (
     <div className={css(styles.fridgeVisualWrapper)}>
       <div className={css(styles.fridgeContainer)}>{renderFridgeShelf()}</div>
@@ -65,7 +70,7 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
         footer={null}
         width={'100%'}
       >
-        <ProductInfoModal {...currentProduct} />
+        <ProductInfoModal key={currentProduct.id} {...currentProduct} updateProducts={updateProducts}/>
       </Modal>
     </div>
   );
