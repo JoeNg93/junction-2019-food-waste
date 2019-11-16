@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import style from '../../constants/styleVariables';
 
-const FridgeShelf = ({ items, lastShelf }) => {
+const FridgeShelf = ({ items, lastShelf, openProductInfoModal }) => {
   return (
     <div
       className={css(
@@ -11,8 +11,12 @@ const FridgeShelf = ({ items, lastShelf }) => {
       )}
     >
       {items &&
-        items.map(({ name }, idx) => (
-          <div key={idx} className={css(styles.productCube)}>
+        items.map(({ id, name }) => (
+          <div
+            key={id}
+            className={css(styles.productCube)}
+            onClick={() => openProductInfoModal(id)}
+          >
             {name}
           </div>
         ))}

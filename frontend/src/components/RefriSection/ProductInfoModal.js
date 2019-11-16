@@ -10,7 +10,12 @@ const ProductInfoModal = ({
 }) => {
   return (
     <div>
-      <div className={css(styles.productImage)} />
+      <div className={css(styles.productImageWrapper)}>
+        <img
+          src={require(`../../assets/product-placeholder.jpg`)}
+          className={css(styles.productImage)}
+        />
+      </div>
       <h1 className={css(styles.productName)}>{name}</h1>
       <div>
         <div className={css(styles.sectionTitle)}>Ingredients:</div>
@@ -25,8 +30,8 @@ const ProductInfoModal = ({
       </div>
       <div>
         <div className={css(styles.sectionTitle)}>{`${
-          suggestedExpDate ? 'Suggested´' : ''
-        } expiry date`}</div>
+          suggestedExpDate ? 'Suggested expiry' : 'Expiry'
+        } date`}</div>
         <div className={css(styles.sectionValue)}>{expired_date}</div>
       </div>
     </div>
@@ -35,11 +40,13 @@ const ProductInfoModal = ({
 
 const styles = StyleSheet.create({
   productImage: {
+    width: '100%'
+  },
+  productImageWrapper: {
     width: 150,
     height: 150,
     borderRadius: 3,
-    background: style.primaryColor,
-    margin: '16px auto',
+    margin: '0 auto 24px'
   },
   productName: {
     marginBottom: 16,
