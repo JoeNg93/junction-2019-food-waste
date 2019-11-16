@@ -13,7 +13,7 @@ import { ReactComponent as FridgeIcon } from './assets/fridge_icon.svg';
 import { StyleSheet, css } from 'aphrodite';
 
 const NavBar = () => {
-  const [selectedTab, setSelectedTab] = useState('redTab');
+  const [selectedTab, setSelectedTab] = useState('blueTab');
   const history = useHistory();
 
   return (

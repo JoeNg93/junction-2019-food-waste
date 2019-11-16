@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
   },
   purchaseMessage: {
     fontSize: 20,
-    color: style.primaryColor
+    color: style.primaryColor,
+    textAlign: 'center'
   },
   todayHelper: {
     textDecoration: 'underline',

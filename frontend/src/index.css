@@ -31,3 +31,26 @@ code {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.ant-calendar-picker:focus .ant-calendar-picker-input.ant-input:not(.ant-input-disabled) {
+  border-color: #d9d9d9;
+  box-shadow: none;
+}
+
+.ant-calendar-picker:hover .ant-calendar-picker-input.ant-input:not(.ant-input-disabled) {
+  border-color: #d9d9d9;
+  box-shadow: none;
+}
+
+body .ant-checkbox-checked .ant-checkbox-inner {
+  border-color: #6A81DD;
+  background-color: #6A81DD
+}
+
+body a {
+  color: #6A81DD
+}
+
+body .ant-btn-primary {
+  background-color: #6A81DD
+}

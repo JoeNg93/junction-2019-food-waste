@@ -14,15 +14,15 @@ const ProductInfoModal = ({
   updateProducts
 }) => {
   const dateFormat = 'YYYY-MM-DD';
-  const [expiryDate, setExpiryDate] = useState(expired_date)
+  const [expiryDate, setExpiryDate] = useState(expired_date);
   const expireDateChange = async (date, dateString) => {
     const expiryDateChangeRes = await axios.patch(`/fridge/${id}`, {
       expired_date: dateString,
       suggestedExpDate: false
-    })
-    setExpiryDate(dateString)
-    updateProducts(expiryDateChangeRes.data)
-  }
+    });
+    setExpiryDate(dateString);
+    updateProducts(expiryDateChangeRes.data);
+  };
   return (
     <div>
       <div className={css(styles.productImageWrapper)}>
@@ -52,6 +52,7 @@ const ProductInfoModal = ({
             value={moment(expiryDate, dateFormat)}
             format={dateFormat}
             onChange={expireDateChange}
+            style={{marginTop: 10}}
           />
         </div>
       </div>

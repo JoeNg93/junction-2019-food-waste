@@ -24,8 +24,8 @@ const mockData = [
 ];
 const QRSection = () => {
   let history = useHistory();
-  const [receiptVisible, setReceiptVisible] = useState(true);
-  const [receiptData, setReceiptData] = useState(mockData);
+  const [receiptVisible, setReceiptVisible] = useState(false);
+  const [receiptData, setReceiptData] = useState(null);
   const [purchaseHistoryVisible, setPurchaseHistoryVisible] = useState(false);
   const [purchaseHistoryData, setPurchaseHistoryData] = useState(null);
   const [selectedProducts, setSelectedProducts] = useState([]);
@@ -93,8 +93,7 @@ const QRSection = () => {
         visible={purchaseHistoryVisible}
         footer={null}
         onCancel={handleClosePHModal}
-        style={{ height: '100vh', top: 0 }}
-        bodyStyle={{ height: '100vh' }}
+        centered
         width={'100%'}
       >
         {purchaseHistoryData && (
