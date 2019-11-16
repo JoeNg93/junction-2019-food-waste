@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Icon } from 'antd';
 import { StyleSheet, css } from 'aphrodite';
 import { useHistory } from 'react-router-dom';
+import style from "../../constants/styleVariables";
 import FridgeContainer from './FridgeContainer';
 
 const RegriSection = () => {
@@ -29,8 +30,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     paddingTop: 40,
-    paddingLeft: 32,
-    paddingRight: 32
+    paddingLeft: 28,
+    paddingRight: 28,
+    background: style.backgroundColor,
   },
   content: {
     display: 'flex',
@@ -39,7 +41,9 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   title: {
-    marginBottom: 32
+    marginBottom: 32,
+    color: style.primaryTextColor,
+    fontWeight: 600
   },
   fixedFooter: {
     position: 'fixed',
