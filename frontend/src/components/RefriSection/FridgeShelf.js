@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import style from '../../constants/styleVariables';
+import ProductCube from './ProductCube';
 
-const FridgeShelf = ({ items, lastShelf, openProductInfoModal }) => {
+const FridgeShelf = ({ items, lastShelf, openProductInfoModal, removeProduct }) => {
   return (
     <div
       className={css(
@@ -12,13 +13,13 @@ const FridgeShelf = ({ items, lastShelf, openProductInfoModal }) => {
     >
       {items &&
         items.map(({ id, name }) => (
-          <div
+          <ProductCube
             key={id}
-            className={css(styles.productCube)}
-            onClick={() => openProductInfoModal(id)}
-          >
-            <div className="line-clamp">{name}</div>
-          </div>
+            id={id}
+            name={name}
+            openProductInfoModal={openProductInfoModal}
+            removeProduct={removeProduct}
+          />
         ))}
     </div>
   );
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
     background: style.primaryColor,
     color: 'white',
     margin: '5px 6px',
-    overflow: 'hidden',
+    overflow: 'hidden'
   }
 });
 

@@ -48,16 +48,23 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
           key={idx}
           items={products.splice(0, shelfCapacity)}
           openProductInfoModal={openProductInfoModal}
+          removeProduct={removeProduct}
           hasBorder
         />
       );
     });
   };
 
-  const updateProducts = (updatedProducts) => {
+  const updateProducts = updatedProducts => {
     setFridgeProducts(updatedProducts);
     setIdxFridgeProducts(_.groupBy(updatedProducts, 'id'));
-  }
+  };
+
+  const removeProduct = (id) => {
+    const updatedProducts = fridgeProducts.filter(({itemId}) => {
+      itemId !== id});
+    updateProducts(updatedProducts);
+  };
 
   return (
     <div className={css(styles.fridgeVisualWrapper)}>
@@ -70,7 +77,11 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
         footer={null}
         width={'100%'}
       >
-        <ProductInfoModal key={currentProduct.id} {...currentProduct} updateProducts={updateProducts}/>
+        <ProductInfoModal
+          key={currentProduct.id}
+          {...currentProduct}
+          updateProducts={updateProducts}
+        />
       </Modal>
     </div>
   );
