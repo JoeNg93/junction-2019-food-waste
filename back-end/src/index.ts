@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
 import ReceiptController from './controllers/ReceiptController';
+import FridgeController from './controllers/FridgeController';
 
 // Populate env vars from .env file
 dotenv.config();
@@ -11,6 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/receipts', ReceiptController);
+app.use('/fridge', FridgeController);
 
 app.get('/*', (req, res) => {
   res.send('pongsss');
