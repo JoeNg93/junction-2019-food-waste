@@ -2,11 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, css } from 'aphrodite';
 import { Modal } from 'antd';
 import FridgeShelf from './FridgeShelf';
-import data from './mockData';
 import style from '../../constants/styleVariables';
+import axios from 'axios';
+
+const fetchFridgeProducts = async () => {
+  const fridgeProductsRes = await axios({ method: 'GET', url: '/fridge' });
+  return fridgeProductsRes.data;
+};
 
 const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
+  const [fridgeProducts, setFridgeProducts] = useState([]);
   const [productInfoModalVisible, setProductInfoModalVisible] = useState(false);
+
+  // Fetch all products in fridge after mount
+  useEffect(() => {
+    fetchFridgeProducts().then(products => setFridgeProducts(products));
+  }, []);
 
   const openProductInfoModal = () => {
     setProductInfoModalVisible(true);
@@ -17,7 +28,7 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
   };
 
   const renderFridgeShelf = () => {
-    const products = [...data];
+    const products = [...fridgeProducts];
 
     return Array.from({ length: numberOfShelf }, (el, idx) => {
       if (idx === numberOfShelf - 1) {
