@@ -151,13 +151,16 @@ const styles = StyleSheet.create({
     height: 'calc(100% - 102px)',
     display: 'grid',
     justifyItems: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   QrReader: {
     height: '100%',
     width: '100%',
     maxHeight: 500,
-    maxWidth: 500
+    maxWidth: 500,
+    display: 'grid',
+    justifyItems: 'center',
+    alignItems: 'center'
   }
 });
 
