@@ -2,15 +2,28 @@ import React, {useState, useEffect} from 'react';
 import QrReader from 'react-qr-reader';
 import { StyleSheet, css } from 'aphrodite';
 import { Button, Icon, Modal } from 'antd'
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 const QRSection = () => {
   let history = useHistory();
-  const [visible, setVisible] = useState(false);
+  const [receiptVisible, setReceiptVisible] = useState(false);
+  const [purchaseHistoryVisible, setPurchaseHistoryVisible] = useState(false);
+  const [receiptData, setReceiptData] = useState(null)
+  const [purchaseHistoryData, setPurchaseHistoryData] = useState(null)
 
-  const handleScan = (data) => {
+  const handleScan = async (data) => {
     if (data) {
-      setVisible(true)
+      let dataObj = JSON.parse(data)
+      if (dataObj.type === 'receipt') {
+        const receiptRes = await axios.get(`/receipt/${dataObj.result}`)
+        setReceiptVisible(true)
+        setReceiptData(receiptRes.data)
+      } else {
+        const productPurchaseHistoryRes = await axios.get(`/products/${dataObj.result}/purchase-history`)
+        setPurchaseHistoryVisible(true)
+        setPurchaseHistoryData(productPurchaseHistoryRes.data)
+      }
     }
   }
 
@@ -18,8 +31,18 @@ const QRSection = () => {
     console.error(err)
   }
 
-  const handleCloseModal = () => {
-    setVisible(false)
+  const handleConfirmReceiptModal = () => {
+    history.push('/')
+  }
+
+  const handleCloseReceiptModal = () => {
+    setReceiptData(null)
+    setReceiptVisible(false)
+  }
+
+  const handleClosePHModal = () => {
+    setReceiptData(null)
+    setPurchaseHistoryVisible(false)
   }
 
   return (
@@ -41,17 +64,32 @@ const QRSection = () => {
           style={{height: '100%'}}
         />
       </div>
-        <Modal
-          title="Purchase History"
-          visible={visible}
-          footer={null}
-          onCancel={handleCloseModal}
-          style={{height: '100vh', top: 0}}
-          bodyStyle={{height: '100vh'}}
-          width={'100%'}
-        >
-          <p>Test</p>
-        </Modal>
+      <Modal
+        title={"Purchase History"}
+        visible={purchaseHistoryVisible}
+        footer={null}
+        onCancel={handleClosePHModal}
+        style={{height: '100vh', top: 0}}
+        bodyStyle={{height: '100vh'}}
+        width={'100%'}
+      >
+        {
+          purchaseHistoryData && <h1>This is purchaseHistory Data</h1>
+        }
+      </Modal>
+      <Modal
+        title={"Receipt"}
+        visible={receiptVisible}
+        onCancel={handleCloseReceiptModal}
+        onOk={handleConfirmReceiptModal}
+        style={{height: '100vh', top: 0}}
+        bodyStyle={{height: '100vh'}}
+        width={'100%'}
+      >
+        {
+          receiptData && <h1>This is receipt data</h1>
+        }
+      </Modal>
     </>
   )
 }
