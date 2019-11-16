@@ -40,6 +40,22 @@ const FrequencyCalendar = () => {
     setValue(value);
   };
 
+  const focusToday = () => {
+    setValue(moment(Date.now()));
+  };
+
+  const renderPurchaseMessage = (value) => {
+    const { productName, purchaseHistory } = data;
+    const totalQtyByMonth = purchaseHistory.reduce((sum, item) => {
+      if (value.isSame(moment(item.date), 'month')) {
+        sum += item.qty;
+      }
+      return sum;
+      }, 0);
+
+    return `You have brought ${totalQtyByMonth} ${productName} this month.`
+  };
+
   return (
     <div>
       <Calendar
@@ -53,6 +69,8 @@ const FrequencyCalendar = () => {
               value={value}
               type={type}
               onChange={onChange}
+              focusToday={focusToday}
+              renderPurchaseMessage={renderPurchaseMessage}
             />
           );
         }}
