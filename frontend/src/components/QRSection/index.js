@@ -52,9 +52,9 @@ const QRSection = () => {
   };
 
   const handleConfirmReceiptModal = async () => {
-    // const postFridgeRes = await axios.post('/fridge', { products: selectedProducts })
-    // setSelectedProducts([])
-    // history.push('/');
+    const postFridgeRes = await axios.post('/fridge', { products: selectedProducts })
+    setSelectedProducts([])
+    history.push('/');
     console.log(selectedProducts)
   };
 
