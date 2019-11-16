@@ -24,8 +24,8 @@ const mockData = [
 ];
 const QRSection = () => {
   let history = useHistory();
-  const [receiptVisible, setReceiptVisible] = useState(false);
-  const [receiptData, setReceiptData] = useState(null);
+  const [receiptVisible, setReceiptVisible] = useState(true);
+  const [receiptData, setReceiptData] = useState(mockData);
   const [purchaseHistoryVisible, setPurchaseHistoryVisible] = useState(false);
   const [purchaseHistoryData, setPurchaseHistoryData] = useState(null);
   const [selectedProducts, setSelectedProducts] = useState([]);
@@ -52,10 +52,10 @@ const QRSection = () => {
   };
 
   const handleConfirmReceiptModal = async () => {
-    const postFridgeRes = await axios.post('/fridge', selectedProducts);
-    console.log(selectedProducts);
-    setSelectedProducts([]);
+    const postFridgeRes = await axios.post('/fridge', { products: selectedProducts })
+    setSelectedProducts([])
     history.push('/');
+    console.log(selectedProducts)
   };
 
   const handleCloseReceiptModal = () => {
@@ -109,7 +109,7 @@ const QRSection = () => {
         onCancel={handleCloseReceiptModal}
         onOk={handleConfirmReceiptModal}
         style={{ height: '100vh', top: 0 }}
-        bodyStyle={{ height: '100vh' }}
+        bodyStyle={{ height: '80vh', overflow: 'scroll' }}
         width={'100%'}
       >
         {receiptData && (
@@ -151,13 +151,16 @@ const styles = StyleSheet.create({
     height: 'calc(100% - 102px)',
     display: 'grid',
     justifyItems: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   QrReader: {
     height: '100%',
     width: '100%',
     maxHeight: 500,
-    maxWidth: 500
+    maxWidth: 500,
+    display: 'grid',
+    justifyItems: 'center',
+    alignItems: 'center'
   }
 });
 
