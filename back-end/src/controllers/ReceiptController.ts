@@ -32,6 +32,7 @@ router.get('/:receiptId', async (req, res) => {
     const receiptInfo = receipts.filter(
       receipt => receipt.Receipt === receiptId
     );
+    console.log('TCL: receiptInfo', receiptInfo);
     const eans = receiptInfo.map(r => r.EAN);
     const eanQuantityMapping = receiptInfo.reduce(
       (prev, curr) => ({
