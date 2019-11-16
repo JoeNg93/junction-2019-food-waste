@@ -15,9 +15,6 @@ function App() {
         <Route path="/qr_scan" exact>
           <QRSection />
         </Route>
-        <Route path="/calendar" exact>
-          <FrequencyCalendar />
-        </Route>
       </Switch>
     </>
   );
