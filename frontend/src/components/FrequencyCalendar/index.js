@@ -21,12 +21,12 @@ const data = {
   ]
 };
 
-const FrequencyCalendar = () => {
+const FrequencyCalendar = ({purchaseHistoryData}) => {
   const [value, setValue] = useState(moment(Date.now()));
 
   const getPurchaseQtyByDate = dateValue => {
     const date = dateValue.format('YYYY-MM-DD'),
-      item = data.purchaseHistory.find(item => item.date === date);
+      item = purchaseHistoryData.purchaseHistory.find(item => item.date === date);
 
     return item && item.qty;
   };
@@ -45,7 +45,7 @@ const FrequencyCalendar = () => {
   };
 
   const renderPurchaseMessage = value => {
-    const { productName, purchaseHistory } = data;
+    const { productName, purchaseHistory } = purchaseHistoryData;
     const totalQtyByMonth = purchaseHistory.reduce((sum, item) => {
       if (value.isSame(moment(item.date), 'month')) {
         sum += item.qty;
