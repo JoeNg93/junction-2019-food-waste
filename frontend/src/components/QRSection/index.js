@@ -63,7 +63,7 @@ const QRSection = () => {
   };
 
   const handleClosePHModal = () => {
-    setReceiptData(null);
+    setPurchaseHistoryData(null);
     setPurchaseHistoryVisible(false);
   };
 

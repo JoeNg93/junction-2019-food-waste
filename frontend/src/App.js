@@ -12,6 +12,7 @@ import { MdContentPaste, MdRestaurantMenu, MdPerson } from 'react-icons/md';
 import { ReactComponent as FridgeIcon } from './assets/fridge_icon.svg';
 import { StyleSheet, css } from 'aphrodite';
 import RecipeSection from './components/RecipeSection/index'
+import ScanHistorySection from './components/ScanHistorySection/index';
 
 const NavBar = () => {
   const [selectedTab, setSelectedTab] = useState('blueTab');
@@ -156,7 +157,9 @@ function App() {
         <Route path="/recipes" exact>
           <RecipeSection />
         </Route>
-
+        <Route path="/scan-history" exact>
+          <ScanHistorySection />
+        </Route>
       </Switch>
       <NavBar />
     </>
