@@ -68,8 +68,9 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
     setIdxFridgeProducts(_.groupBy(updatedProducts, 'id'));
   };
 
-  const removeProduct = id => {
+  const removeProduct = async (id) => {
     updateProducts(fridgeProducts.filter(({ id: itemId }) => itemId !== id));
+    await axios.delete(`/fridge/${id}`)
   };
 
   return (
