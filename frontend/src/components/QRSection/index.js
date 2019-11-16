@@ -1,34 +1,45 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import QrReader from 'react-qr-reader';
 import { StyleSheet, css } from 'aphrodite';
 import { Button, Icon, Modal } from 'antd';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import FrequencyCalendar from '../../components/FrequencyCalendar';
-
+import ReceiptContent from '../../components/ReceiptContent/index'
+const mockData = [
+  {
+      name: "Tölkkipantti 0,15 eur kaikki koot",
+      ean: "2000973900008",
+      quantity: 10,
+      purchase_date: "2019-01-30/18"
+  },
+  {
+      name: "Bonus savuketupakka 30g Vaalea Klassikko",
+      ean: "6410105909063",
+      quantity: 2,
+      purchase_date: "2019-01-30/18"
+  }
+]
 const QRSection = () => {
   let history = useHistory();
   const [receiptVisible, setReceiptVisible] = useState(false);
-  const [purchaseHistoryVisible, setPurchaseHistoryVisible] = useState(false);
   const [receiptData, setReceiptData] = useState(null);
+  const [purchaseHistoryVisible, setPurchaseHistoryVisible] = useState(false);
   const [purchaseHistoryData, setPurchaseHistoryData] = useState(null);
+  const [selectedProducts, setSelectedProducts] = useState([]);
 
   const handleScan = async data => {
     if (data) {
       let dataObj = JSON.parse(data);
       if (dataObj.type === 'receipt') {
-        // const receiptRes = await axios.get(`/receipt/${dataObj.result}`)
-        // setReceiptVisible(true)
-        // setReceiptData(receiptRes.data)
+        const receiptRes = await axios.get(`/receipts/${dataObj.result}`)
         setReceiptVisible(true)
-        setReceiptData('abc')
+        setReceiptData(receiptRes.data)
 
       } else {
-        // const productPurchaseHistoryRes = await axios.get(`/products/${dataObj.result}/purchase-history`)
-        // setPurchaseHistoryVisible(true)
-        // setPurchaseHistoryData(productPurchaseHistoryRes.data)
+        const productPurchaseHistoryRes = await axios.get(`/purchase-history/${dataObj.result}`)
         setPurchaseHistoryVisible(true)
-        setPurchaseHistoryData('abc')
+        setPurchaseHistoryData(productPurchaseHistoryRes.data)
       }
     }
   };
@@ -37,7 +48,10 @@ const QRSection = () => {
     console.error(err);
   };
 
-  const handleConfirmReceiptModal = () => {
+  const handleConfirmReceiptModal = async () => {
+    const postFridgeRes = await axios.post('/fridge', selectedProducts)
+    console.log(selectedProducts)
+    setSelectedProducts([])
     history.push('/');
   };
 
@@ -79,7 +93,7 @@ const QRSection = () => {
       >
         {purchaseHistoryData && (
           <>
-            <FrequencyCalendar />
+            <FrequencyCalendar purchaseHistoryData={purchaseHistoryData}/>
           </>
         )}
       </Modal>
@@ -92,7 +106,14 @@ const QRSection = () => {
         bodyStyle={{ height: '100vh' }}
         width={'100%'}
       >
-        {receiptData && <h1>This is receipt data</h1>}
+        {receiptData && (
+          <>
+            <ReceiptContent
+              selectProducts={(selectedProducts) => setSelectedProducts(selectedProducts)}
+              productList={receiptData}
+            />
+          </>
+        )}
       </Modal>
     </div>
   );
