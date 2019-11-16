@@ -44,4 +44,24 @@ router.post('/', async (req, res) => {
     }
 });
 
+// @DELETE /fridge/{id}
+router.delete('/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const dbData = await db.getData();
+        const { fridge } = dbData;
+
+        // Remove item from fridge
+        dbData.fridge = fridge.filter(item => item.id !== id);
+
+        // Update database
+        await db.writeData(dbData);
+
+        // Return updated fridge
+        return res.status(200).send(dbData.fridge);
+    } catch (error) {
+        return res.status(500).send({ error });
+    }
+});
+
 export default router;
