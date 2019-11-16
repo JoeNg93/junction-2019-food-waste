@@ -7,6 +7,9 @@ import { useHistory } from 'react-router-dom';
 import { TabBar } from 'antd-mobile';
 import style from './constants/styleVariables';
 import { TiCamera } from 'react-icons/ti';
+import { FaUserCog } from 'react-icons/fa';
+import { MdContentPaste, MdRestaurantMenu, MdPerson } from 'react-icons/md';
+import { ReactComponent as FridgeIcon } from './assets/fridge_icon.svg';
 import { StyleSheet, css } from 'aphrodite';
 
 const NavBar = () => {
@@ -19,7 +22,7 @@ const NavBar = () => {
     >
       <TabBar
         unselectedTintColor="#949494"
-        tintColor="#33A3F4"
+        tintColor={style.primaryColor}
         barTintColor="white"
         hidden={window.location.pathname === '/qr_scan'}
       >
@@ -27,118 +30,99 @@ const NavBar = () => {
           title="Fridge"
           key="Fridge"
           icon={
-            <div
+            <FridgeIcon
               style={{
-                width: '22px',
-                height: '22px',
-                background:
-                  'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat'
+                width: 24,
+                height: 24,
+                color: '#949494'
               }}
             />
           }
           selectedIcon={
-            <div
+            <FridgeIcon
               style={{
-                width: '22px',
-                height: '22px',
-                background:
-                  'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat'
+                width: 24,
+                height: 24,
+                color: `${style.primaryColor}`
               }}
             />
           }
           selected={selectedTab === 'blueTab'}
-          badge={1}
           onPress={() => {
             setSelectedTab('blueTab');
             history.push('/');
           }}
-        ></TabBar.Item>
+        />
         <TabBar.Item
           icon={
-            <div
+            <MdRestaurantMenu
               style={{
-                width: '22px',
-                height: '22px',
-                background:
-                  'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat'
+                fontSize: 22
               }}
             />
           }
           selectedIcon={
-            <div
+            <MdRestaurantMenu
               style={{
-                width: '22px',
-                height: '22px',
-                background:
-                  'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat'
+                fontSize: 22,
+                color: `${style.primaryColor}`
               }}
             />
           }
           title="Recipes"
           key="Recipes"
-          badge={'new'}
           selected={selectedTab === 'redTab'}
           onPress={() => {
             setSelectedTab('redTab');
             history.push('/recipes');
           }}
-        ></TabBar.Item>
+        />
+        <TabBar.Item title="hidden" key="hidden" selected={false} />
         <TabBar.Item
           icon={
-            <div
+            <MdContentPaste
               style={{
-                width: '22px',
-                height: '22px',
-                background:
-                  'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat'
+                fontSize: 22
               }}
             />
           }
           selectedIcon={
-            <div
+            <MdContentPaste
               style={{
-                width: '22px',
-                height: '22px',
-                background:
-                  'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat'
+                fontSize: 22,
+                color: `${style.primaryColor}`
               }}
             />
           }
           title="Scan History"
           key="Scan History"
-          dot
+          tintColor={style.primaryColor}
           selected={selectedTab === 'greenTab'}
           onPress={() => {
             setSelectedTab('greenTab');
             history.push('/scan-history');
           }}
-        ></TabBar.Item>
+        />
         <TabBar.Item
           icon={
-            <div
+            <FaUserCog
               style={{
-                width: '22px',
-                height: '22px',
-                background:
-                  'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat'
+                fontSize: 22
               }}
             />
           }
           selectedIcon={
-            <div
+            <FaUserCog
               style={{
-                width: '22px',
-                height: '22px',
-                background:
-                  'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat'
+                fontSize: 22,
+                color: `${style.primaryColor}`
               }}
             />
           }
           title="User Settings"
           key="User Settings"
-          dot
           selected={false}
-        ></TabBar.Item>
+        />
       </TabBar>
 
       <div
