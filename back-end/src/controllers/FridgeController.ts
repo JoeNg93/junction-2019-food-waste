@@ -1,7 +1,7 @@
 import express from 'express';
 import db from '../db';
 import { FridgePostBody } from '../types';
-import { newId } from '../utils';
+import { newId, suggestDeffaultExpDate } from '../utils';
 
 const router = express.Router();
 
@@ -25,11 +25,14 @@ router.post('/', async (req, res) => {
         products.forEach(product => {
             for (let i = 0; i < product.quantity; i++) {
                 const id = newId();
+                const expired_date = product.expired_date || suggestDeffaultExpDate(product.purchase_date);
                 dbData.fridge.push({
                     id,
                     ean: product.ean,
                     name: product.name,
                     purchase_date: product.purchase_date,
+                    expired_date,
+                    suggestedExpDate: !product.expired_date,
                 });
             }
         });

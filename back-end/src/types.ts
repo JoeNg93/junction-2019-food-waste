@@ -13,6 +13,8 @@ export interface FridgeItem {
   name: string;
   ean: string;
   purchase_date: string;
+  expired_date?: string;
+  suggestedExpDate?: boolean;
 }
 
 export interface Store {
@@ -31,6 +33,8 @@ export interface ProductAPI {
 export interface Product extends ProductAPI {
   quantity: number;
   purchase_date: string;
+  expired_date?: string;
+  suggestedExpDate?: boolean;
 }
 
 export interface ProductPurchaseHistoryDetail {
