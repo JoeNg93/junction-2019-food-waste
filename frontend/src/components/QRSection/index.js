@@ -134,7 +134,9 @@ const styles = StyleSheet.create({
     height: '100%'
   },
   header: {
-    top: 30,
+    top: 0,
+    height: 52,
+    width: '100%',
     padding: '10px 6px',
     background: style.primaryColor
   },
@@ -146,14 +148,19 @@ const styles = StyleSheet.create({
     background: style.primaryColor
   },
   QrContainer: {
-    height: '100%',
-    position: 'relative',
-    top: 100,
-    bottom: 20
+    height: 'calc(100% - 102px)',
+    display: 'grid',
+    justifyItems: 'center',
+    alignItems: 'center'
   },
   QrReader: {
     height: '100%',
-    width: '100%'
+    width: '100%',
+    maxHeight: 500,
+    maxWidth: 500,
+    display: 'grid',
+    justifyItems: 'center',
+    alignItems: 'center'
   }
 });
 
