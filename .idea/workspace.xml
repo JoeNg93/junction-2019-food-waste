@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54651b23-585c-4dd8-b9b1-48635acecd5a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/junction-2019-food-waste.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/¨" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/db/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/db/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeContainer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,8 +37,8 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+            <state relative-caret-position="323">
+              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -67,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/frontend/src/components/QRSection/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="94" column="28" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
+              <caret line="93" column="28" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -79,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="519">
-              <caret line="41" column="19" selection-start-line="39" selection-start-column="4" selection-end-line="41" selection-end-column="19" />
+              <caret line="74" column="19" selection-start-line="72" selection-start-column="4" selection-end-line="74" selection-end-column="19" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -90,8 +82,8 @@
       <file leaf-file-name="FridgeContainer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="62" column="21" lean-forward="true" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+            <state relative-caret-position="318">
+              <caret line="60" column="4" lean-forward="true" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -103,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeShelf.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="448">
-              <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -360,7 +352,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573843662039</updated>
       <workItem from="1573843664933" duration="161000" />
-      <workItem from="1573846137424" duration="37323000" />
+      <workItem from="1573846137424" duration="37426000" />
     </task>
     <task id="LOCAL-00001" summary="Prettify calendar section">
       <created>1573893243117</created>
@@ -373,15 +365,16 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37484000" />
+    <option name="totallyTimeSpent" value="37587000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32976446" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32976446" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="TypeScript" />
@@ -480,8 +473,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="323">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
@@ -508,7 +501,7 @@
     <entry file="file://$PROJECT_DIR$/frontend/src/components/QRSection/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="94" column="28" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
+          <caret line="93" column="28" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
@@ -518,7 +511,7 @@
     <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="519">
-          <caret line="41" column="19" selection-start-line="39" selection-start-column="4" selection-end-line="41" selection-end-column="19" />
+          <caret line="74" column="19" selection-start-line="72" selection-start-column="4" selection-end-line="74" selection-end-column="19" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
@@ -563,7 +556,7 @@
     <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeShelf.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
-          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
@@ -572,8 +565,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="62" column="21" lean-forward="true" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="21" />
+        <state relative-caret-position="318">
+          <caret line="60" column="4" lean-forward="true" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>

@@ -62,7 +62,7 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
 
   const removeProduct = id => {
     const updatedProducts = fridgeProducts.filter(({ itemId }) => {
-      return itemId !==s id;
+      return itemId !== id;
     });
     updateProducts(updatedProducts);
   };
