@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Row, Icon } from 'antd';
 import { StyleSheet, css } from 'aphrodite';
+import style from '../../constants/styleVariables';
 
 const CalendarHeader = ({
   value,
@@ -57,7 +58,7 @@ const styles = StyleSheet.create({
   },
   purchaseMessage: {
     fontSize: 20,
-    color: '#1890ff'
+    color: style.primaryColor
   },
   todayHelper: {
     textDecoration: 'underline',
@@ -65,7 +66,7 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   todayRow: {
-    background: '#1890ff',
+    background: style.primaryColor,
     padding: 4
   }
 });
