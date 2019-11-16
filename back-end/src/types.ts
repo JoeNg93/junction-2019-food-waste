@@ -41,3 +41,7 @@ export interface ProductsData {
 export interface FridgePostBody {
     products: Product[],
 }
+
+export interface PurchaseHistory {
+    [day: string]: Product,
+}
