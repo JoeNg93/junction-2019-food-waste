@@ -24,8 +24,8 @@ const mockData = [
 ];
 const QRSection = () => {
   let history = useHistory();
-  const [receiptVisible, setReceiptVisible] = useState(true);
-  const [receiptData, setReceiptData] = useState(mockData);
+  const [receiptVisible, setReceiptVisible] = useState(false);
+  const [receiptData, setReceiptData] = useState(null);
   const [purchaseHistoryVisible, setPurchaseHistoryVisible] = useState(false);
   const [purchaseHistoryData, setPurchaseHistoryData] = useState(null);
   const [selectedProducts, setSelectedProducts] = useState([]);
@@ -55,7 +55,6 @@ const QRSection = () => {
     const postFridgeRes = await axios.post('/fridge', { products: selectedProducts })
     setSelectedProducts([])
     history.push('/');
-    console.log(selectedProducts)
   };
 
   const handleCloseReceiptModal = () => {
