@@ -84,5 +84,14 @@
       ]
     }
   },
-  "fridge": []
+  "fridge": [
+    {
+      "id": "adsdsfdfsdfdfsdf",
+      "name": "Tölkkipantti 0,15 eur kaikki koot",
+      "ean": "2000973900008",
+      "purchase_date": "2019-01-30/18",
+      "expired_date": "2019-02-10",
+      "suggestedExpDate": true
+    }
+  ]
 }

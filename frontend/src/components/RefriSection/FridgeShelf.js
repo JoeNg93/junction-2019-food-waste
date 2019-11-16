@@ -11,9 +11,9 @@ const FridgeShelf = ({ items, lastShelf }) => {
       )}
     >
       {items &&
-        items.map(({ productName }, idx) => (
+        items.map(({ name }, idx) => (
           <div key={idx} className={css(styles.productCube)}>
-            {productName}
+            {name}
           </div>
         ))}
     </div>
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     background: style.primaryColor,
     color: 'white',
-    margin: '5px 6px',
+    margin: '5px 6px'
   }
 });
 
