@@ -4,6 +4,8 @@ import { Modal } from 'antd';
 import FridgeShelf from './FridgeShelf';
 import style from '../../constants/styleVariables';
 import axios from 'axios';
+import ProductInfoModal from './ProductInfoModal';
+import _ from 'lodash';
 
 const fetchFridgeProducts = async () => {
   const fridgeProductsRes = await axios({ method: 'GET', url: '/fridge' });
@@ -12,15 +14,21 @@ const fetchFridgeProducts = async () => {
 
 const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
   const [fridgeProducts, setFridgeProducts] = useState([]);
+  const [idxFridgeProducts, setIdxFridgeProducts] = useState({});
   const [productInfoModalVisible, setProductInfoModalVisible] = useState(false);
+  const [currentProduct, setCurrentProduct] = useState({});
 
   // Fetch all products in fridge after mount
   useEffect(() => {
-    fetchFridgeProducts().then(products => setFridgeProducts(products));
+    fetchFridgeProducts().then(products => {
+      setFridgeProducts(products);
+      setIdxFridgeProducts(_.groupBy(products, 'id'));
+    });
   }, []);
 
-  const openProductInfoModal = () => {
+  const openProductInfoModal = id => {
     setProductInfoModalVisible(true);
+    setCurrentProduct(idxFridgeProducts[id] ? idxFridgeProducts[id][0] : {});
   };
 
   const closeProductInfoModal = () => {
@@ -53,10 +61,11 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
         title={'Product Info'}
         visible={productInfoModalVisible}
         onCancel={closeProductInfoModal}
-        style={{ height: '100vh', top: 0 }}
-        bodyStyle={{ height: '100vh' }}
+        centered
+        footer={null}
         width={'100%'}
       >
+        <ProductInfoModal {...currentProduct} />
       </Modal>
     </div>
   );
