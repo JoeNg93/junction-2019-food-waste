@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, css } from 'aphrodite';
+import style from '../../constants/styleVariables';
 
 const FridgeShelf = ({ items, hasBorder }) => {
   return (
@@ -24,18 +25,24 @@ const styles = StyleSheet.create({
     padding: 20,
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-between'
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   shelfBorder: {
     borderBottom: '1px solid #d8d8d8'
   },
   productCube: {
-    width: 50,
-    height: 50,
-    borderRadius: 6,
+    width: 60,
+    height: 60,
+    padding: 6,
+    borderRadius: 3,
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    background: style.primaryColor,
+    color: 'white',
+    marginRight: 12,
+    marginBottom: 10
   }
 });
 

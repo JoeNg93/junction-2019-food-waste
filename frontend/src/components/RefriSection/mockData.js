@@ -23,4 +23,16 @@ export default [
   {
     productName: 'Peach'
   },
+  {
+    productName: 'Cabbage'
+  },
+  {
+    productName: 'Apple'
+  },
+  {
+    productName: 'Banana'
+  },
+  {
+    productName: 'Peach'
+  },
 ]

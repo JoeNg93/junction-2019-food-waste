@@ -3,7 +3,7 @@ import { StyleSheet, css } from 'aphrodite';
 import FridgeShelf from './FridgeShelf';
 import data from './mockData';
 
-const FridgeContainer = ({ shelfCapacity = 4, numberOfShelf = 3 }) => {
+const FridgeContainer = ({ shelfCapacity = 2, numberOfShelf = 3 }) => {
   const renderFridgeShelf = () => {
     const products = [...data];
 
