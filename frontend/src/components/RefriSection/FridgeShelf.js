@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   fridgeShelfContainer: {
     background: '#fff',
     flex: 1,
-    padding: 12,
+    padding: '8px 6px',
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',

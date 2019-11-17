@@ -41,7 +41,7 @@ const ProductInfoModal = ({
       </div>
       <div>
         <div className={css(styles.sectionTitle)}>Purchase date:</div>
-        <div className={css(styles.sectionValue)}>{purchase_date}</div>
+        <div className={css(styles.sectionValue)}>{purchase_date.split('/')[0]}</div>
       </div>
       <div>
         <div className={css(styles.sectionTitle)}>{`${

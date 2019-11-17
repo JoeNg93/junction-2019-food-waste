@@ -34,7 +34,11 @@ const data = [
 const RecipeSection = () => {
   return (
     <div className={css(styles.container)}>
-      <h1 className={css(styles.title)}>Recommened Recipes</h1>
+      <h1 className={css(styles.title)}>Recommended Recipes</h1>
+      <p className={css(styles.description)}>
+        These are recommended recipes based on your fridge content. Let's try to
+        finish the food before buying new ones !
+      </p>
       {data.map(ele => (
         <div key={ele.name}>
           <Card
@@ -79,9 +83,11 @@ const styles = StyleSheet.create({
     paddingRight: 28
   },
   title: {
-    marginBottom: 32,
     color: style.primaryTextColor,
     fontWeight: 600
+  },
+  description: {
+    marginBottom: 32
   }
 });
 
