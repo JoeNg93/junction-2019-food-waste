@@ -6,6 +6,24 @@ import FrequencyCalendar from '../FrequencyCalendar/index';
 
 const data = [
   {
+    productName: 'Pirkka pizzasuikale 250g',
+    image: 'pizza.jpeg',
+    purchaseHistory: [
+      {
+        date: '2019-10-23',
+        qty: 4
+      },
+      {
+        date: '2019-11-11',
+        qty: 2
+      },
+      {
+        date: '2019-11-06',
+        qty: 3
+      }
+    ]
+  },
+  {
     productName: 'Pirkka tomaattisose 70g',
     image: 'tomato.jpeg',
     purchaseHistory: [
@@ -23,24 +41,6 @@ const data = [
       }
     ]
   },
-  {
-    productName: 'Pirkka pizzasuikale 250g',
-    image: 'pizza.jpeg',
-    purchaseHistory: [
-      {
-        date: '2019-10-23',
-        qty: 4
-      },
-      {
-        date: '2019-11-11',
-        qty: 2
-      },
-      {
-        date: '2019-11-06',
-        qty: 3
-      }
-    ]
-  }
 ];
 const ScanHistorySection = () => {
   const [purchaseHistoryVisible, setPurchaseHistoryVisible] = useState(false);

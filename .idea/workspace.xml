@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54651b23-585c-4dd8-b9b1-48635acecd5a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/back-end/db/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/db/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeShelf.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeShelf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/RefriSection/ProductCube.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RefriSection/ProductCube.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/ScanHistorySection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ScanHistorySection/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -106,7 +104,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/ReceiptContent/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2044">
+            <state relative-caret-position="-35">
               <caret line="73" column="43" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
@@ -115,11 +113,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/ScanHistorySection/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
+            <state relative-caret-position="504">
+              <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -130,8 +128,10 @@
       <file leaf-file-name="FridgeShelf.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeShelf.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+            <state relative-caret-position="196">
+              <caret line="5" column="80" selection-start-line="5" selection-start-column="80" selection-end-line="5" selection-end-column="80" />
+              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+              <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -148,16 +148,16 @@
         <entry file="file://$PROJECT_DIR$/back-end/db/db.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="112">
-              <caret line="560" column="1" selection-start-line="560" selection-start-column="1" selection-end-line="560" selection-end-column="1" />
+              <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductCube.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductCube.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/ProductCube.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+            <state relative-caret-position="168">
+              <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -168,8 +168,8 @@
       <file leaf-file-name="ProductInfoModal.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/ProductInfoModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="899">
-              <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
+            <state relative-caret-position="151">
+              <caret line="81" selection-start-line="81" selection-end-line="83" selection-end-column="4" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -251,17 +251,17 @@
         <option value="$PROJECT_DIR$/frontend/src/components/FrequencyCalendar/CalendarHeader.js" />
         <option value="$PROJECT_DIR$/frontend/src/index.css" />
         <option value="$PROJECT_DIR$/frontend/src/components/ReceiptContent/index.js" />
-        <option value="$PROJECT_DIR$/back-end/db/db.json" />
         <option value="$PROJECT_DIR$/frontend/src/components/QRSection/index.js" />
         <option value="$PROJECT_DIR$/back-end/.env" />
-        <option value="$PROJECT_DIR$/frontend/src/components/RefriSection/ProductInfoModal.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/RecipeSection/index.js" />
-        <option value="$PROJECT_DIR$/frontend/src/components/ScanHistorySection/index.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/RefriSection/index.js" />
         <option value="$PROJECT_DIR$/frontend/src/App.js" />
-        <option value="$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeShelf.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeContainer.js" />
+        <option value="$PROJECT_DIR$/frontend/src/components/RefriSection/ProductInfoModal.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/RefriSection/ProductCube.js" />
+        <option value="$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeShelf.js" />
+        <option value="$PROJECT_DIR$/back-end/db/db.json" />
+        <option value="$PROJECT_DIR$/frontend/src/components/ScanHistorySection/index.js" />
       </list>
     </option>
   </component>
@@ -438,7 +438,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573843662039</updated>
       <workItem from="1573843664933" duration="161000" />
-      <workItem from="1573846137424" duration="47836000" />
+      <workItem from="1573846137424" duration="48979000" />
     </task>
     <task id="LOCAL-00001" summary="Prettify calendar section">
       <created>1573893243117</created>
@@ -451,7 +451,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47997000" />
+    <option name="totallyTimeSpent" value="49140000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -584,13 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/back-end/db/db.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="560" column="1" selection-start-line="560" selection-start-column="1" selection-end-line="560" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/public/manifest.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -611,60 +604,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/ProductInfoModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="899">
-          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/RecipeSection/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="80" column="17" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/ScanHistorySection/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/ReceiptContent/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2044">
-          <caret line="73" column="43" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="28">
           <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeShelf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -688,12 +631,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/ProductCube.js">
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/RecipeSection/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        <state relative-caret-position="189">
+          <caret line="80" column="17" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/ReceiptContent/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-35">
+          <caret line="73" column="43" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/ProductInfoModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="81" selection-start-line="81" selection-end-line="83" selection-end-column="4" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/ProductCube.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeShelf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="5" column="80" selection-start-line="5" selection-start-column="80" selection-end-line="5" selection-end-column="80" />
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/back-end/db/db.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/ScanHistorySection/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
