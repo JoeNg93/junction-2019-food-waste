@@ -15,7 +15,7 @@ import RecipeSection from './components/RecipeSection/index'
 import ScanHistorySection from './components/ScanHistorySection/index';
 
 const NavBar = () => {
-  const [selectedTab, setSelectedTab] = useState('blueTab');
+  const [selectedTab, setSelectedTab] = useState(window.location.pathname);
   const history = useHistory();
 
   return (
@@ -49,9 +49,9 @@ const NavBar = () => {
               }}
             />
           }
-          selected={selectedTab === 'blueTab'}
+          selected={selectedTab === '/'}
           onPress={() => {
-            setSelectedTab('blueTab');
+            setSelectedTab('/');
             history.push('/');
           }}
         />
@@ -73,9 +73,9 @@ const NavBar = () => {
           }
           title="Recipes"
           key="Recipes"
-          selected={selectedTab === 'redTab'}
+          selected={selectedTab === '/recipes'}
           onPress={() => {
-            setSelectedTab('redTab');
+            setSelectedTab('/recipes');
             history.push('/recipes');
           }}
         />
@@ -99,9 +99,9 @@ const NavBar = () => {
           title="Scan History"
           key="Scan History"
           tintColor={style.primaryColor}
-          selected={selectedTab === 'greenTab'}
+          selected={selectedTab === '/scan-history'}
           onPress={() => {
-            setSelectedTab('greenTab');
+            setSelectedTab('/scan-history');
             history.push('/scan-history');
           }}
         />
