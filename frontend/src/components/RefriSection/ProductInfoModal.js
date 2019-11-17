@@ -24,11 +24,9 @@ const ProductInfoModal = ({
   suggestedExpDate,
   updateProducts
 }) => {
-  const noImages = [];
-
   const dateFormat = 'YYYY-MM-DD',
     imageLink = 'https://k-file-storage-qa.imgix.net/f/k-ruoka/product/',
-    imageSrc = noImages[ean]
+    imageSrc = noImages.includes(ean)
       ? require(`../../assets/product-placeholder.jpg`)
       : imageLink + ean;
 
@@ -82,13 +80,16 @@ const ProductInfoModal = ({
 
 const styles = StyleSheet.create({
   productImage: {
-    width: '100%'
+    height: '100%'
   },
   productImageWrapper: {
     width: 150,
     height: 150,
     borderRadius: 4,
-    margin: '0 auto 24px'
+    margin: '0 auto 24px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   productName: {
     marginBottom: 16,

@@ -6,7 +6,8 @@ import FrequencyCalendar from '../FrequencyCalendar/index';
 
 const data = [
   {
-    productName: 'Pringle',
+    productName: 'Pirkka tomaattisose 70g',
+    image: 'tomato.jpeg',
     purchaseHistory: [
       {
         date: '2019-10-23',
@@ -23,7 +24,8 @@ const data = [
     ]
   },
   {
-    productName: 'Pirkka Naudanliha',
+    productName: 'Pirkka pizzasuikale 250g',
+    image: 'pizza.jpeg',
     purchaseHistory: [
       {
         date: '2019-10-23',
@@ -67,7 +69,7 @@ const ScanHistorySection = () => {
                 <Avatar
                   size={60}
                   style={{borderRadius: 4, border: '1px solid #dddddd'}}
-                  src={require(`../../assets/product-placeholder.jpg`)}
+                  src={require(`../../assets/${item.image}`)}
                 />
               }
               title={<h3 style={{ paddingTop: 20 }}>{item.productName}</h3>}
