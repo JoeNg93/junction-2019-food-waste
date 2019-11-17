@@ -34,7 +34,7 @@ const data = [
 const RecipeSection = () => {
   return (
     <div className={css(styles.container)}>
-      <h1 className={css(styles.title)}>Recommened Recipes</h1>
+      <h1 className={css(styles.title)}>Recommended Recipes</h1>
       {data.map(ele => (
         <div key={ele.name}>
           <Card
