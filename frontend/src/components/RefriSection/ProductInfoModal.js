@@ -5,6 +5,16 @@ import { DatePicker } from 'antd';
 import moment from 'moment';
 import axios from 'axios';
 
+const noImages = [
+  "6407810010160",
+  "6409100054243",
+  "6413466116101",
+  "6419800020837",
+  "2000973900008",
+  "6410105909063",
+  "6430041692775",
+];
+
 const ProductInfoModal = ({
   name,
   id,
