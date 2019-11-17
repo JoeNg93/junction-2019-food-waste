@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { List, Avatar, Modal } from 'antd';
 import { css, StyleSheet } from 'aphrodite';
 import style from '../../constants/styleVariables';
-import FrequencyCalendar from '../FrequencyCalendar/index'
+import FrequencyCalendar from '../FrequencyCalendar/index';
 
 const data = [
   {
@@ -39,7 +39,7 @@ const data = [
       }
     ]
   }
-]
+];
 const ScanHistorySection = () => {
   const [purchaseHistoryVisible, setPurchaseHistoryVisible] = useState(false);
   const [purchaseHistoryData, setPurchaseHistoryData] = useState(null);
@@ -58,12 +58,19 @@ const ScanHistorySection = () => {
         renderItem={item => (
           <List.Item
             onClick={() => {
-              setPurchaseHistoryVisible(true)
-              setPurchaseHistoryData(item)
-            }}>
+              setPurchaseHistoryVisible(true);
+              setPurchaseHistoryData(item);
+            }}
+          >
             <List.Item.Meta
-              avatar={<Avatar size={90} src={require(`../../assets/product-placeholder.jpg`)} />}
-              title={<h3 style={{paddingTop: 20}}>{item.productName}</h3>}
+              avatar={
+                <Avatar
+                  size={60}
+                  style={{borderRadius: 4, border: '1px solid #dddddd'}}
+                  src={require(`../../assets/product-placeholder.jpg`)}
+                />
+              }
+              title={<h3 style={{ paddingTop: 20 }}>{item.productName}</h3>}
             />
           </List.Item>
         )}
@@ -83,20 +90,21 @@ const ScanHistorySection = () => {
         )}
       </Modal>
     </div>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
-  container : {
+  container: {
     paddingBottom: 70,
-    paddingTop: 50
+    paddingTop: 50,
+    paddingLeft: 28,
+    paddingRight: 28
   },
   title: {
     marginBottom: 32,
     color: style.primaryTextColor,
     fontWeight: 600,
-    paddingLeft: 10
   }
-})
+});
 
 export default ScanHistorySection;

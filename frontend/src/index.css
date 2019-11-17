@@ -54,3 +54,7 @@ body a {
 body .ant-btn-primary {
   background-color: #6A81DD
 }
+
+body .ant-card-meta-detail > div:not(:last-child) {
+  margin-bottom: 0;
+}

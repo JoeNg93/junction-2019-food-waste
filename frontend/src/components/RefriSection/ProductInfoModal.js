@@ -67,7 +67,8 @@ const styles = StyleSheet.create({
   productImageWrapper: {
     width: 150,
     height: 150,
-    borderRadius: 3,
+    borderRadius: 4,
+    border: '1px solid #dddddd',
     margin: '0 auto 24px'
   },
   productName: {

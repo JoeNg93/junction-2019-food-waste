@@ -1,17 +1,17 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Table } from 'antd';
 import { DatePicker } from 'antd';
 import moment from 'moment';
 
-
-const ReceiptContent = ({productList, selectProducts}) => {
-
-  const [productsExpiryDate, setProductExpiryDate] = useState(productList.map(product => {
-    return {
-      ean: product.ean,
-      expired_date: ''
-    }
-  }))
+const ReceiptContent = ({ productList, selectProducts }) => {
+  const [productsExpiryDate, setProductExpiryDate] = useState(
+    productList.map(product => {
+      return {
+        ean: product.ean,
+        expired_date: ''
+      };
+    })
+  );
 
   const dateFormat = 'YYYY-MM-DD';
   const columns = [
@@ -19,34 +19,36 @@ const ReceiptContent = ({productList, selectProducts}) => {
       title: 'Name',
       dataIndex: 'name',
       width: '30%',
-      render: text => <a>{text}</a>,
+      render: text => <a>{text}</a>
     },
     {
       title: 'Qty',
       dataIndex: 'quantity',
-      width: '13%',
+      width: '13%'
     },
     {
       title: 'Expiry Date',
       dataIndex: 'expired_date',
-      render: ({ean, expired_date}) =>  <DatePicker
-                                          format={dateFormat}
-                                          onChange={(...dateArgs) => expireDateChange(ean, ...dateArgs)}
-                                        />
+      render: ({ ean, expired_date }) => (
+        <DatePicker
+          format={dateFormat}
+          onChange={(...dateArgs) => expireDateChange(ean, ...dateArgs)}
+        />
+      )
     }
   ];
 
   const expireDateChange = (ean, ...dateArgs) => {
     const dateString = dateArgs[1];
-    let productsExpiryDateClone = [...productsExpiryDate]
+    let productsExpiryDateClone = [...productsExpiryDate];
     productsExpiryDateClone = productsExpiryDateClone.map(product => {
       if (product.ean === ean) {
         product.expired_date = dateString;
       }
       return product;
-    })
-    setProductExpiryDate(productsExpiryDateClone)
-  }
+    });
+    setProductExpiryDate(productsExpiryDateClone);
+  };
 
   const rowSelection = {
     onChange: (selectedRowKeys, selectedRows) => {
@@ -56,11 +58,13 @@ const ReceiptContent = ({productList, selectProducts}) => {
           purchase_date: row.purchase_date,
           name: row.name,
           quantity: row.quantity,
-          expired_date: productsExpiryDate.find(product => product.ean === row.ean).expired_date
-        }
-      })
-      selectProducts(selectedRowsFormatted)
-    },
+          expired_date: productsExpiryDate.find(
+            product => product.ean === row.ean
+          ).expired_date
+        };
+      });
+      selectProducts(selectedRowsFormatted);
+    }
   };
 
   const data = productList.map(product => {
@@ -78,9 +82,14 @@ const ReceiptContent = ({productList, selectProducts}) => {
   });
   return (
     <>
-      <Table pagination={false} rowSelection={rowSelection} columns={columns} dataSource={data}/>
+      <Table
+        pagination={false}
+        rowSelection={rowSelection}
+        columns={columns}
+        dataSource={data}
+      />
     </>
-  )
-}
+  );
+};
 
 export default ReceiptContent;
