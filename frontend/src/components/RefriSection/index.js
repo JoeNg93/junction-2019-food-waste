@@ -8,7 +8,6 @@ import FridgeContainer from './FridgeContainer';
 
 const RegriSection = () => {
   let history = useHistory();
-
   useEffect(() => {
     requestNotificationPermission();
   }, []);
@@ -25,10 +24,20 @@ const RegriSection = () => {
     }
   };
 
-  const sendPushNotification = () => {
-    if ("Notification" in window && Notification.permission === "granted") {
-      setTimeout(new Notification("Your milk will be expired today!"), 5000);
-    }
+  const sendPushNotification = ()  => {
+    navigator.serviceWorker.register('./sw.js');
+    Notification.requestPermission(function(result) {
+      if (result === 'granted') {
+        navigator.serviceWorker.ready.then(function(registration) {
+          setTimeout(registration.showNotification('Your milk will be expired today!', {
+            body: 'Eat me first plss!',
+            icon: './logo.png',
+            vibrate: [200, 100, 200, 100, 200, 100, 200],
+            tag: 'vibration-sample'
+          }), 5000);
+        });
+      }
+    })
   };
 
   return (
@@ -36,7 +45,7 @@ const RegriSection = () => {
       <div className={css(styles.content)}>
         <div className={css(styles.titleContainer)}>
           <h1 className={css(styles.title)}>Your fridge</h1>
-          <div className={css(styles.invisibleBtn)} onClick={sendPushNotification}/>
+          <div className={css(styles.invisibleBtn)} onClick={sendPushNotification} />
         </div>
         <FridgeContainer />
       </div>
@@ -51,7 +60,7 @@ const styles = StyleSheet.create({
   },
   invisibleBtn: {
     height: 42,
-    width: 80,
+    width: 160,
   },
   pageContainer: {
     height: '100%',
