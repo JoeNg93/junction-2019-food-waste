@@ -52,7 +52,7 @@ const ProductInfoModal = ({
             value={moment(expiryDate, dateFormat)}
             format={dateFormat}
             onChange={expireDateChange}
-            style={{marginTop: 10}}
+            style={{marginTop: 10, marginBottom: 20}}
           />
         </div>
       </div>
