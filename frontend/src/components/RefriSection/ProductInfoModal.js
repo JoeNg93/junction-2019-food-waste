@@ -8,12 +8,20 @@ import axios from 'axios';
 const ProductInfoModal = ({
   name,
   id,
+  ean,
   purchase_date,
   expired_date,
   suggestedExpDate,
   updateProducts
 }) => {
-  const dateFormat = 'YYYY-MM-DD';
+  const noImages = [];
+
+  const dateFormat = 'YYYY-MM-DD',
+    imageLink = 'https://k-file-storage-qa.imgix.net/f/k-ruoka/product/',
+    imageSrc = noImages[ean]
+      ? require(`../../assets/product-placeholder.jpg`)
+      : imageLink + ean;
+
   const [expiryDate, setExpiryDate] = useState(expired_date);
   const expireDateChange = async (date, dateString) => {
     const expiryDateChangeRes = await axios.patch(`/fridge/${id}`, {
@@ -27,7 +35,7 @@ const ProductInfoModal = ({
     <div>
       <div className={css(styles.productImageWrapper)}>
         <img
-          src={require(`../../assets/product-placeholder.jpg`)}
+          src={imageSrc}
           className={css(styles.productImage)}
         />
       </div>
@@ -41,7 +49,9 @@ const ProductInfoModal = ({
       </div>
       <div>
         <div className={css(styles.sectionTitle)}>Purchase date:</div>
-        <div className={css(styles.sectionValue)}>{purchase_date.split('/')[0]}</div>
+        <div className={css(styles.sectionValue)}>
+          {purchase_date.split('/')[0]}
+        </div>
       </div>
       <div>
         <div className={css(styles.sectionTitle)}>{`${
@@ -52,7 +62,7 @@ const ProductInfoModal = ({
             value={moment(expiryDate, dateFormat)}
             format={dateFormat}
             onChange={expireDateChange}
-            style={{marginTop: 10, marginBottom: 20}}
+            style={{ marginTop: 10, marginBottom: 20 }}
           />
         </div>
       </div>
@@ -68,7 +78,6 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     borderRadius: 4,
-    border: '1px solid #dddddd',
     margin: '0 auto 24px'
   },
   productName: {

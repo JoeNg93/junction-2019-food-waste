@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54651b23-585c-4dd8-b9b1-48635acecd5a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/back-end/db/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/db/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/QRSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/QRSection/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/RefriSection/ProductInfoModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RefriSection/ProductInfoModal.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/QRSection/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="151" column="17" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
+            <state relative-caret-position="4452">
+              <caret line="159" column="18" lean-forward="true" selection-start-line="159" selection-start-column="18" selection-end-line="159" selection-end-column="18" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -163,11 +163,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductInfoModal.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProductInfoModal.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/ProductInfoModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+            <state relative-caret-position="340">
+              <caret line="80" column="25" lean-forward="true" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -246,10 +246,10 @@
         <option value="$PROJECT_DIR$/frontend/src/components/ReceiptContent/index.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/ScanHistorySection/index.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/RecipeSection/index.js" />
-        <option value="$PROJECT_DIR$/frontend/src/components/RefriSection/ProductInfoModal.js" />
         <option value="$PROJECT_DIR$/back-end/db/db.json" />
         <option value="$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeShelf.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/QRSection/index.js" />
+        <option value="$PROJECT_DIR$/frontend/src/components/RefriSection/ProductInfoModal.js" />
       </list>
     </option>
   </component>
@@ -421,7 +421,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573843662039</updated>
       <workItem from="1573843664933" duration="161000" />
-      <workItem from="1573846137424" duration="43728000" />
+      <workItem from="1573846137424" duration="44628000" />
     </task>
     <task id="LOCAL-00001" summary="Prettify calendar section">
       <created>1573893243117</created>
@@ -434,7 +434,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43889000" />
+    <option name="totallyTimeSpent" value="44789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -624,16 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/ProductInfoModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/back-end/db/db.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
@@ -666,10 +656,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/QRSection/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="151" column="17" selection-start-line="151" selection-start-column="17" selection-end-line="151" selection-end-column="17" />
+        <state relative-caret-position="4452">
+          <caret line="159" column="18" lean-forward="true" selection-start-line="159" selection-start-column="18" selection-end-line="159" selection-end-column="18" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/ProductInfoModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="80" column="25" lean-forward="true" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
