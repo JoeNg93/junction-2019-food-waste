@@ -32,7 +32,7 @@ const ProductCube = ({ name, id, openProductInfoModal, removeProduct }) => {
 
   const onDrag = () => {
     const {x, y} = deltaPosition;
-    if (x > 50 || x < -50 || y > 50 || y < -50) {
+    if ((x > 50 || x < -50 || y > 50 || y < -50)) {
       return removeProduct(id);
     }
     restartPos();

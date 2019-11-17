@@ -12,6 +12,8 @@ const fetchFridgeProducts = async () => {
   return fridgeProductsRes.data;
 };
 
+let trackedProducts = {};
+
 const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
   const [fridgeProducts, setFridgeProducts] = useState([]);
   const [idxFridgeProducts, setIdxFridgeProducts] = useState({});
@@ -68,9 +70,13 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
     setIdxFridgeProducts(_.groupBy(updatedProducts, 'id'));
   };
 
-  const removeProduct = async (id) => {
+  const removeProduct = async id => {
+    if (trackedProducts[id]) {
+      return;
+    }
+    trackedProducts[id] = true;
     updateProducts(fridgeProducts.filter(({ id: itemId }) => itemId !== id));
-    await axios.delete(`/fridge/${id}`)
+    await axios.delete(`/fridge/${id}`);
   };
 
   return (
