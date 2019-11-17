@@ -6,7 +6,9 @@
       <change afterPath="$PROJECT_DIR$/frontend/src/assets/tomato.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back-end/db/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/db/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/RecipeSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RecipeSection/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/RefriSection/ProductInfoModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RefriSection/ProductInfoModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/RefriSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/RefriSection/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/ScanHistorySection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/ScanHistorySection/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,8 +74,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="72" column="37" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
+            <state relative-caret-position="506">
+              <caret line="69" column="17" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -96,8 +98,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/RecipeSection/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1078">
-              <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+            <state relative-caret-position="189">
+              <caret line="80" column="17" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -120,8 +122,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/src/components/ScanHistorySection/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="63" column="38" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+            <state relative-caret-position="245">
+              <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -150,7 +152,7 @@
         <entry file="file://$PROJECT_DIR$/back-end/db/db.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="112">
-              <caret line="470" column="1" selection-start-line="470" selection-start-column="1" selection-end-line="470" selection-end-column="1" />
+              <caret line="462" column="1" selection-start-line="462" selection-start-column="1" selection-end-line="462" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -255,14 +257,14 @@
         <option value="$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeContainer.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/RefriSection/ProductCube.js" />
         <option value="$PROJECT_DIR$/frontend/src/index.css" />
-        <option value="$PROJECT_DIR$/frontend/src/components/RefriSection/index.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/ReceiptContent/index.js" />
-        <option value="$PROJECT_DIR$/frontend/src/components/RecipeSection/index.js" />
         <option value="$PROJECT_DIR$/back-end/db/db.json" />
         <option value="$PROJECT_DIR$/frontend/src/components/RefriSection/FridgeShelf.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/QRSection/index.js" />
         <option value="$PROJECT_DIR$/back-end/.env" />
         <option value="$PROJECT_DIR$/frontend/src/components/RefriSection/ProductInfoModal.js" />
+        <option value="$PROJECT_DIR$/frontend/src/components/RecipeSection/index.js" />
+        <option value="$PROJECT_DIR$/frontend/src/components/RefriSection/index.js" />
         <option value="$PROJECT_DIR$/frontend/src/components/ScanHistorySection/index.js" />
       </list>
     </option>
@@ -440,7 +442,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573843662039</updated>
       <workItem from="1573843664933" duration="161000" />
-      <workItem from="1573846137424" duration="46010000" />
+      <workItem from="1573846137424" duration="46189000" />
     </task>
     <task id="LOCAL-00001" summary="Prettify calendar section">
       <created>1573893243117</created>
@@ -453,7 +455,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46171000" />
+    <option name="totallyTimeSpent" value="46350000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -616,7 +618,7 @@
     <entry file="file://$PROJECT_DIR$/back-end/db/db.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
-          <caret line="470" column="1" selection-start-line="470" selection-start-column="1" selection-end-line="470" selection-end-column="1" />
+          <caret line="462" column="1" selection-start-line="462" selection-start-column="1" selection-end-line="462" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -650,32 +652,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="72" column="37" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/ReceiptContent/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2044">
           <caret line="73" column="43" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/RecipeSection/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1078">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -690,10 +672,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/RecipeSection/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="80" column="17" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/RefriSection/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="69" column="17" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/ScanHistorySection/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="63" column="38" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+        <state relative-caret-position="245">
+          <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

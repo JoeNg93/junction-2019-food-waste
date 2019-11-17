@@ -78,7 +78,7 @@ const RecipeSection = () => {
 const styles = StyleSheet.create({
   container: {
     paddingBottom: 70,
-    paddingTop: 50,
+    paddingTop: 30,
     paddingLeft: 28,
     paddingRight: 28
   },
