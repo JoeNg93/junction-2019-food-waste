@@ -446,14 +446,6 @@
       "suggestedExpDate": true
     },
     {
-      "id": "CdOoRrrLpb9pyiLMvpAL",
-      "ean": "6410405105448",
-      "name": "Pirkka punajuurisalaatti 400g kevyt",
-      "purchase_date": "2019-11-12/17",
-      "expired_date": "2019-11-18",
-      "suggestedExpDate": true
-    },
-    {
       "id": "UzfQdQKR04bRWkdCtjyt",
       "ean": "6407810010160",
       "name": "Atria PT kanan sisäfilee 600g pintamaust",
@@ -470,14 +462,6 @@
       "suggestedExpDate": true
     },
     {
-      "id": "N9Oncb80CLkht2BN5AXP",
-      "ean": "6410405094223",
-      "name": "Pirkka edam 500 g 16 %",
-      "purchase_date": "2019-11-12/17",
-      "expired_date": "2019-11-18",
-      "suggestedExpDate": true
-    },
-    {
       "id": "PrjpKTRt2sSagZsspZEo",
       "ean": "6409100054243",
       "name": "HK kevytlinja meetvursti 100g",
@@ -486,25 +470,9 @@
       "suggestedExpDate": true
     },
     {
-      "id": "3raUlCqzsh9bSIphrGaY",
-      "ean": "6410402008896",
-      "name": "Pirkka porkkana 1kg Suomi 1lk",
-      "purchase_date": "2019-11-12/17",
-      "expired_date": "2019-11-21",
-      "suggestedExpDate": true
-    },
-    {
       "id": "kyQnmMc5by2fWb4NIaFX",
       "ean": "6410402008896",
       "name": "Pirkka porkkana 1kg Suomi 1lk",
-      "purchase_date": "2019-11-12/17",
-      "expired_date": "2019-11-22",
-      "suggestedExpDate": true
-    },
-    {
-      "id": "skF7AVmGoJunLSD9h0Dy",
-      "ean": "6410402010332",
-      "name": "Pirkka tonnikalapala 200/150g vedessä",
       "purchase_date": "2019-11-12/17",
       "expired_date": "2019-11-22",
       "suggestedExpDate": true

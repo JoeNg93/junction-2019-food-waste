@@ -3,7 +3,7 @@ import { StyleSheet, css } from 'aphrodite';
 import style from '../../constants/styleVariables';
 import ProductCube from './ProductCube';
 
-const FridgeShelf = ({ items, lastShelf, openProductInfoModal, removeProduct }) => {
+const FridgeShelf = ({ items, lastShelf, openProductInfoModal, showRemoveConfirm }) => {
   return (
     <div
       className={css(
@@ -18,7 +18,7 @@ const FridgeShelf = ({ items, lastShelf, openProductInfoModal, removeProduct }) 
             id={id}
             name={name}
             openProductInfoModal={openProductInfoModal}
-            removeProduct={removeProduct}
+            showRemoveConfirm={showRemoveConfirm}
           />
         ))}
     </div>

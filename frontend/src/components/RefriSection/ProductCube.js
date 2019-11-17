@@ -4,7 +4,7 @@ import style from '../../constants/styleVariables';
 import _ from 'lodash';
 import Draggable from 'react-draggable';
 
-const ProductCube = ({ name, id, openProductInfoModal, removeProduct }) => {
+const ProductCube = ({ name, id, openProductInfoModal, showRemoveConfirm }) => {
   const [activeDrags, setActiveDrags] = useState(0);
   const [controlledPosition, setControlledPosition] = useState({ x: 0, y: 0 });
   const [deltaPosition, setDeltaPosition] = useState({ x: 0, y: 0 });
@@ -19,6 +19,7 @@ const ProductCube = ({ name, id, openProductInfoModal, removeProduct }) => {
 
   const restartPos = () => {
     setControlledPosition({ x: 0, y: 0 });
+    setDeltaPosition({ x: 0, y: 0 });
   };
 
   const handleDrag = (e, ui) => {
@@ -33,10 +34,10 @@ const ProductCube = ({ name, id, openProductInfoModal, removeProduct }) => {
 
   const onDrag = () => {
     const {x, y} = deltaPosition;
-    if ((x > 50 || x < -50 || y > 50 || y < -50)) {
-      return removeProduct(id);
+    if ((x > 70 || x < -70 || y > 70 || y < -70)) {
+      restartPos();
+      showRemoveConfirm(id);
     }
-    restartPos();
   };
 
   const debounceOnDrag = _.debounce(onDrag, 500);

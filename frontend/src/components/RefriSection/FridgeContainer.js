@@ -7,6 +7,8 @@ import axios from 'axios';
 import ProductInfoModal from './ProductInfoModal';
 import _ from 'lodash';
 
+const { confirm } = Modal;
+
 const fetchFridgeProducts = async () => {
   const fridgeProductsRes = await axios({ method: 'GET', url: '/fridge' });
   return fridgeProductsRes.data;
@@ -47,7 +49,7 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
             key={idx}
             items={products}
             openProductInfoModal={openProductInfoModal}
-            removeProduct={removeProduct}
+            showRemoveConfirm={showRemoveConfirm}
             lastShelf
           />
         );
@@ -58,7 +60,7 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
           key={idx}
           items={products.splice(0, shelfCapacity)}
           openProductInfoModal={openProductInfoModal}
-          removeProduct={removeProduct}
+          showRemoveConfirm={showRemoveConfirm}
           hasBorder
         />
       );
@@ -70,11 +72,26 @@ const FridgeContainer = ({ shelfCapacity = 8, numberOfShelf = 3 }) => {
     setIdxFridgeProducts(_.groupBy(updatedProducts, 'id'));
   };
 
-  const removeProduct = async id => {
+  const showRemoveConfirm = id => {
     if (trackedProducts[id]) {
       return;
     }
     trackedProducts[id] = true;
+
+    confirm({
+      title: 'Do you want to delete this item from fridge?',
+      content: 'Remove food items that you have already finished.',
+      centered: true,
+      onOk() {
+        return removeProduct(id);
+      },
+      onCancel() {
+        trackedProducts[id] = false;
+      }
+    });
+  };
+
+  const removeProduct = async id => {
     updateProducts(fridgeProducts.filter(({ id: itemId }) => itemId !== id));
     await axios.delete(`/fridge/${id}`);
   };
