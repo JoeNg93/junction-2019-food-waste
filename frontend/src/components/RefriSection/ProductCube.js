@@ -27,7 +27,8 @@ const ProductCube = ({ name, id, openProductInfoModal, removeProduct }) => {
       x: x + ui.deltaX,
       y: y + ui.deltaY
     });
-    setTimeout(onDrag, 500)
+
+    debounceOnDrag()
   };
 
   const onDrag = () => {
@@ -37,6 +38,8 @@ const ProductCube = ({ name, id, openProductInfoModal, removeProduct }) => {
     }
     restartPos();
   };
+
+  const debounceOnDrag = _.debounce(onDrag, 500);
 
   return (
     <Draggable
@@ -67,7 +70,8 @@ const styles = StyleSheet.create({
     background: style.primaryColor,
     color: 'white',
     margin: '5px 6px',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    cursor: 'pointer'
   }
 });
 

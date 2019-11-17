@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Icon } from 'antd';
-import { TiCamera } from 'react-icons/ti';
 import { StyleSheet, css } from 'aphrodite';
 import { useHistory } from 'react-router-dom';
 import style from '../../constants/styleVariables';
@@ -63,14 +61,15 @@ const styles = StyleSheet.create({
     width: 160,
   },
   pageContainer: {
-    height: '100%',
+    height: '100vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     paddingTop: 30,
     paddingLeft: 28,
     paddingRight: 28,
-    background: style.backgroundColor
+    background: style.backgroundColor,
+    overflow: 'hidden',
   },
   content: {
     display: 'flex',

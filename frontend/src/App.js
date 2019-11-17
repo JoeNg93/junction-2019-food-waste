@@ -20,7 +20,7 @@ const NavBar = () => {
 
   return (
     <div
-      style={{ position: 'fixed', height: '300px', width: '100%', bottom: 0 }}
+      style={{ position: 'fixed', width: '100%', bottom: 0 }}
     >
       <TabBar
         unselectedTintColor="#949494"
