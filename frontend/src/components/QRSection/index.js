@@ -25,18 +25,18 @@ const mockData = [
 const QRSection = () => {
   let history = useHistory();
   const [receiptVisible, setReceiptVisible] = useState(false);
+  const [isFetched, setIsFetched] = useState(false)
   const [receiptData, setReceiptData] = useState(null);
   const [purchaseHistoryVisible, setPurchaseHistoryVisible] = useState(false);
   const [purchaseHistoryData, setPurchaseHistoryData] = useState(null);
   const [selectedProducts, setSelectedProducts] = useState([]);
 
   const handleScan = async data => {
-    if (data) {
+    if (data && !isFetched) {
       let dataObj = JSON.parse(data);
       if (dataObj.type === 'receipt') {
-        const receiptRes = await axios.get(
-          `/receipts/${dataObj.result}?storeId=${dataObj.storeId}`
-        );
+        const receiptRes = await axios.get(`/receipts/${dataObj.result}?storeId=${dataObj.storeId}`);
+        setIsFetched(true);
         setReceiptVisible(true);
         setReceiptData(receiptRes.data);
       } else {
@@ -64,11 +64,13 @@ const QRSection = () => {
   const handleCloseReceiptModal = () => {
     setReceiptData(null);
     setReceiptVisible(false);
+    setIsFetched(false)
   };
 
   const handleClosePHModal = () => {
     setPurchaseHistoryData(null);
     setPurchaseHistoryVisible(false);
+    setIsFetched(false)
   };
 
   return (
