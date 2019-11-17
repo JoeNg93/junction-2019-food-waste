@@ -34,7 +34,9 @@ const QRSection = () => {
     if (data) {
       let dataObj = JSON.parse(data);
       if (dataObj.type === 'receipt') {
-        const receiptRes = await axios.get(`/receipts/${dataObj.result}?storeId=${dataObj.storeId}`);
+        const receiptRes = await axios.get(
+          `/receipts/${dataObj.result}?storeId=${dataObj.storeId}`
+        );
         setReceiptVisible(true);
         setReceiptData(receiptRes.data);
       } else {
@@ -52,8 +54,10 @@ const QRSection = () => {
   };
 
   const handleConfirmReceiptModal = async () => {
-    const postFridgeRes = await axios.post('/fridge', { products: selectedProducts })
-    setSelectedProducts([])
+    const postFridgeRes = await axios.post('/fridge', {
+      products: selectedProducts
+    });
+    setSelectedProducts([]);
     history.push('/');
   };
 
@@ -74,10 +78,13 @@ const QRSection = () => {
           onClick={() => history.push('/')}
           style={{ border: 'none', background: 'transparent', color: 'white' }}
         >
-          <Icon type="left" style={{fontSize: 18}}/>
-          <span style={{fontSize: 18, fontWeight: 600}}>Back</span>
+          <Icon type="left" style={{ fontSize: 18 }} />
+          <span style={{ fontSize: 18, fontWeight: 600 }}>Back</span>
         </Button>
       </div>
+      <p className={css(styles.instructions)}>
+        Scan your bill or product QR code to keep track of your purchases.
+      </p>
       <div className={css(styles.QrContainer)}>
         <QrReader
           delay={300}
@@ -138,6 +145,12 @@ const styles = StyleSheet.create({
     padding: '10px 6px',
     background: style.primaryColor
   },
+  instructions: {
+    textAlign: 'center',
+    width: '80%',
+    margin: 'auto',
+    marginTop: 20
+  },
   footer: {
     position: 'absolute',
     bottom: 0,
@@ -146,7 +159,7 @@ const styles = StyleSheet.create({
     background: style.primaryColor
   },
   QrContainer: {
-    height: 'calc(100% - 102px)',
+    height: 'calc(100% - 200px)',
     display: 'grid',
     justifyItems: 'center',
     alignItems: 'center'
