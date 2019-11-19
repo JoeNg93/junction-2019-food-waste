@@ -2,25 +2,11 @@
   "receipts": [
     "420021025138844",
     "420021025138844",
-    "420169354058888",
+    "420021025138844",
     "420169354058888",
     "420141464355983"
   ],
   "product_history": {
-    "Kivikylä palvarin lihapyörykkä 350g": {
-      "name": "Kivikylä palvarin lihapyörykkä 350g",
-      "ean": "6406300009608",
-      "history": [
-        {
-          "quantity": 1,
-          "purchase_date": "2019-11-10/18"
-        },
-        {
-          "quantity": 1,
-          "purchase_date": "2019-11-10/18"
-        }
-      ]
-    },
     "Bonus savuketupakka 30g Vaalea Klassikko": {
       "name": "Bonus savuketupakka 30g Vaalea Klassikko",
       "ean": "6410105909063",
@@ -32,33 +18,9 @@
         {
           "quantity": 2,
           "purchase_date": "2019-11-10/18"
-        }
-      ]
-    },
-    "Tölkkipantti 0,15 eur kaikki koot": {
-      "name": "Tölkkipantti 0,15 eur kaikki koot",
-      "ean": "2000973900008",
-      "history": [
-        {
-          "quantity": 10,
-          "purchase_date": "2019-11-10/18"
         },
         {
-          "quantity": 10,
-          "purchase_date": "2019-11-10/18"
-        }
-      ]
-    },
-    "Koff olut 4,5% 0,5l": {
-      "name": "Koff olut 4,5% 0,5l",
-      "ean": "6415600020657",
-      "history": [
-        {
-          "quantity": 1,
-          "purchase_date": "2019-11-10/18"
-        },
-        {
-          "quantity": 1,
+          "quantity": 2,
           "purchase_date": "2019-11-10/18"
         }
       ]
@@ -67,6 +29,10 @@
       "name": "Karjala olut 4,5% 0,33l tlk 8-pack",
       "ean": "6413605142152",
       "history": [
+        {
+          "quantity": 1,
+          "purchase_date": "2019-11-10/18"
+        },
         {
           "quantity": 1,
           "purchase_date": "2019-11-10/18"
@@ -88,6 +54,10 @@
         {
           "quantity": 1,
           "purchase_date": "2019-11-10/18"
+        },
+        {
+          "quantity": 1,
+          "purchase_date": "2019-11-10/18"
         }
       ]
     },
@@ -101,6 +71,28 @@
         },
         {
           "quantity": 1,
+          "purchase_date": "2019-11-10/18"
+        },
+        {
+          "quantity": 1,
+          "purchase_date": "2019-11-10/18"
+        }
+      ]
+    },
+    "Tölkkipantti 0,15 eur kaikki koot": {
+      "name": "Tölkkipantti 0,15 eur kaikki koot",
+      "ean": "2000973900008",
+      "history": [
+        {
+          "quantity": 10,
+          "purchase_date": "2019-11-10/18"
+        },
+        {
+          "quantity": 10,
+          "purchase_date": "2019-11-10/18"
+        },
+        {
+          "quantity": 10,
           "purchase_date": "2019-11-10/18"
         }
       ]
@@ -116,20 +108,46 @@
         {
           "quantity": 1,
           "purchase_date": "2019-11-10/18"
-        }
-      ]
-    },
-    "Oululainen reissumies tumma 4kpl/280g": {
-      "name": "Oululainen reissumies tumma 4kpl/280g",
-      "ean": "6413466080204",
-      "history": [
-        {
-          "quantity": 1,
-          "purchase_date": "2019-11-12/17"
         },
         {
           "quantity": 1,
-          "purchase_date": "2019-11-12/17"
+          "purchase_date": "2019-11-10/18"
+        }
+      ]
+    },
+    "Kivikylä palvarin lihapyörykkä 350g": {
+      "name": "Kivikylä palvarin lihapyörykkä 350g",
+      "ean": "6406300009608",
+      "history": [
+        {
+          "quantity": 1,
+          "purchase_date": "2019-11-10/18"
+        },
+        {
+          "quantity": 1,
+          "purchase_date": "2019-11-10/18"
+        },
+        {
+          "quantity": 1,
+          "purchase_date": "2019-11-10/18"
+        }
+      ]
+    },
+    "Koff olut 4,5% 0,5l": {
+      "name": "Koff olut 4,5% 0,5l",
+      "ean": "6415600020657",
+      "history": [
+        {
+          "quantity": 1,
+          "purchase_date": "2019-11-10/18"
+        },
+        {
+          "quantity": 1,
+          "purchase_date": "2019-11-10/18"
+        },
+        {
+          "quantity": 1,
+          "purchase_date": "2019-11-10/18"
         }
       ]
     },
@@ -143,71 +161,27 @@
         },
         {
           "quantity": 1,
+          "purchase_date": "2019-11-14/17"
+        }
+      ]
+    },
+    "Leipurimestarin rouhepatonki 380g": {
+      "name": "Leipurimestarin rouhepatonki 380g",
+      "ean": "6413466116101",
+      "history": [
+        {
+          "quantity": 2,
           "purchase_date": "2019-11-12/17"
-        },
+        }
+      ]
+    },
+    "Oululainen reissumies tumma 4kpl/280g": {
+      "name": "Oululainen reissumies tumma 4kpl/280g",
+      "ean": "6413466080204",
+      "history": [
         {
           "quantity": 1,
-          "purchase_date": "2019-11-14/17"
-        }
-      ]
-    },
-    "Pirkka punajuurisalaatti 400g kevyt": {
-      "name": "Pirkka punajuurisalaatti 400g kevyt",
-      "ean": "6410405105448",
-      "history": [
-        {
-          "quantity": 2,
           "purchase_date": "2019-11-12/17"
-        },
-        {
-          "quantity": 2,
-          "purchase_date": "2019-11-12/17"
-        }
-      ]
-    },
-    "K Citymarket valk.40L ESSI henks.kassi": {
-      "name": "K Citymarket valk.40L ESSI henks.kassi",
-      "ean": "6430041692775",
-      "history": [
-        {
-          "quantity": 2,
-          "purchase_date": "2019-11-12/17"
-        },
-        {
-          "quantity": 2,
-          "purchase_date": "2019-11-12/17"
-        }
-      ]
-    },
-    "Sipuli Suomi": {
-      "name": "Sipuli Suomi",
-      "ean": "2000613700005",
-      "history": [
-        {
-          "quantity": 0,
-          "purchase_date": "2019-11-12/17"
-        },
-        {
-          "quantity": 0,
-          "purchase_date": "2019-11-12/17"
-        }
-      ]
-    },
-    "Atria PT kanan sisäfilee 600g pintamaust": {
-      "name": "Atria PT kanan sisäfilee 600g pintamaust",
-      "ean": "6407810010160",
-      "history": [
-        {
-          "quantity": 4,
-          "purchase_date": "2019-11-12/17"
-        },
-        {
-          "quantity": 4,
-          "purchase_date": "2019-11-12/17"
-        },
-        {
-          "quantity": 4,
-          "purchase_date": "2019-11-14/17"
         }
       ]
     },
@@ -221,11 +195,17 @@
         },
         {
           "quantity": 2,
-          "purchase_date": "2019-11-12/17"
-        },
+          "purchase_date": "2019-11-14/17"
+        }
+      ]
+    },
+    "Pirkka punajuurisalaatti 400g kevyt": {
+      "name": "Pirkka punajuurisalaatti 400g kevyt",
+      "ean": "6410405105448",
+      "history": [
         {
           "quantity": 2,
-          "purchase_date": "2019-11-14/17"
+          "purchase_date": "2019-11-12/17"
         }
       ]
     },
@@ -239,6 +219,26 @@
         },
         {
           "quantity": 1,
+          "purchase_date": "2019-11-14/17"
+        }
+      ]
+    },
+    "Banaani": {
+      "name": "Banaani",
+      "ean": "2000818700008",
+      "history": [
+        {
+          "quantity": 2,
+          "purchase_date": "2019-11-12/17"
+        }
+      ]
+    },
+    "Pirkka rasvaton maito 1 l": {
+      "name": "Pirkka rasvaton maito 1 l",
+      "ean": "6410405082626",
+      "history": [
+        {
+          "quantity": 1,
           "purchase_date": "2019-11-12/17"
         },
         {
@@ -247,14 +247,30 @@
         }
       ]
     },
-    "Pirkka tomaattiketsuppi 730g": {
-      "name": "Pirkka tomaattiketsuppi 730g",
-      "ean": "6410405120526",
+    "Pirkka edam 500 g 16 %": {
+      "name": "Pirkka edam 500 g 16 %",
+      "ean": "6410405094223",
       "history": [
         {
-          "quantity": 1,
+          "quantity": 2,
           "purchase_date": "2019-11-12/17"
-        },
+        }
+      ]
+    },
+    "Pirkka porkkana 1kg Suomi 1lk": {
+      "name": "Pirkka porkkana 1kg Suomi 1lk",
+      "ean": "6410402008896",
+      "history": [
+        {
+          "quantity": 2,
+          "purchase_date": "2019-11-12/17"
+        }
+      ]
+    },
+    "HK kevytlinja meetvursti 100g": {
+      "name": "HK kevytlinja meetvursti 100g",
+      "ean": "6409100054243",
+      "history": [
         {
           "quantity": 1,
           "purchase_date": "2019-11-12/17"
@@ -270,79 +286,15 @@
       "ean": "2000607600007",
       "history": [
         {
-          "quantity": 0,
-          "purchase_date": "2019-11-12/17"
-        },
-        {
-          "quantity": 0,
-          "purchase_date": "2019-11-12/17"
-        }
-      ]
-    },
-    "Leipurimestarin rouhepatonki 380g": {
-      "name": "Leipurimestarin rouhepatonki 380g",
-      "ean": "6413466116101",
-      "history": [
-        {
-          "quantity": 2,
-          "purchase_date": "2019-11-12/17"
-        },
-        {
-          "quantity": 2,
-          "purchase_date": "2019-11-12/17"
-        }
-      ]
-    },
-    "Vital 50 %vähsok hednekta+10vit 1l": {
-      "name": "Vital 50 %vähsok hednekta+10vit 1l",
-      "ean": "6415130049869",
-      "history": [
-        {
-          "quantity": 2,
-          "purchase_date": "2019-11-12/17"
-        },
-        {
-          "quantity": 2,
-          "purchase_date": "2019-11-12/17"
-        }
-      ]
-    },
-    "Pirkka edam 500 g 16 %": {
-      "name": "Pirkka edam 500 g 16 %",
-      "ean": "6410405094223",
-      "history": [
-        {
-          "quantity": 2,
-          "purchase_date": "2019-11-12/17"
-        },
-        {
-          "quantity": 2,
-          "purchase_date": "2019-11-12/17"
-        }
-      ]
-    },
-    "Banaani": {
-      "name": "Banaani",
-      "ean": "2000818700008",
-      "history": [
-        {
-          "quantity": 0,
-          "purchase_date": "2019-11-12/17"
-        },
-        {
-          "quantity": 0,
-          "purchase_date": "2019-11-12/17"
-        }
-      ]
-    },
-    "HK kevytlinja meetvursti 100g": {
-      "name": "HK kevytlinja meetvursti 100g",
-      "ean": "6409100054243",
-      "history": [
-        {
           "quantity": 1,
           "purchase_date": "2019-11-12/17"
-        },
+        }
+      ]
+    },
+    "Pirkka tomaattiketsuppi 730g": {
+      "name": "Pirkka tomaattiketsuppi 730g",
+      "ean": "6410405120526",
+      "history": [
         {
           "quantity": 1,
           "purchase_date": "2019-11-12/17"
@@ -353,32 +305,34 @@
         }
       ]
     },
-    "Pirkka rasvaton maito 1 l": {
-      "name": "Pirkka rasvaton maito 1 l",
-      "ean": "6410405082626",
+    "Atria PT kanan sisäfilee 600g pintamaust": {
+      "name": "Atria PT kanan sisäfilee 600g pintamaust",
+      "ean": "6407810010160",
       "history": [
         {
-          "quantity": 1,
+          "quantity": 4,
           "purchase_date": "2019-11-12/17"
         },
         {
-          "quantity": 1,
-          "purchase_date": "2019-11-12/17"
-        },
-        {
-          "quantity": 1,
+          "quantity": 4,
           "purchase_date": "2019-11-14/17"
         }
       ]
     },
-    "Pirkka porkkana 1kg Suomi 1lk": {
-      "name": "Pirkka porkkana 1kg Suomi 1lk",
-      "ean": "6410402008896",
+    "Sipuli Suomi": {
+      "name": "Sipuli Suomi",
+      "ean": "2000613700005",
       "history": [
         {
-          "quantity": 2,
+          "quantity": 1,
           "purchase_date": "2019-11-12/17"
-        },
+        }
+      ]
+    },
+    "K Citymarket valk.40L ESSI henks.kassi": {
+      "name": "K Citymarket valk.40L ESSI henks.kassi",
+      "ean": "6430041692775",
+      "history": [
         {
           "quantity": 2,
           "purchase_date": "2019-11-12/17"
@@ -395,166 +349,172 @@
         },
         {
           "quantity": 2,
-          "purchase_date": "2019-11-12/17"
-        },
+          "purchase_date": "2019-11-14/17"
+        }
+      ]
+    },
+    "Vital 50 %vähsok hednekta+10vit 1l": {
+      "name": "Vital 50 %vähsok hednekta+10vit 1l",
+      "ean": "6415130049869",
+      "history": [
         {
           "quantity": 2,
-          "purchase_date": "2019-11-14/17"
+          "purchase_date": "2019-11-12/17"
         }
       ]
     }
   },
   "fridge": [
     {
-      "id": "wGWpVLW86C3cgKn8lotj",
-      "ean": "6406300009608",
-      "name": "Kivikylä palvarin lihapyörykkä 350g",
-      "purchase_date": "2019-11-10/18",
-      "expired_date": "2019-11-20",
-      "suggestedExpDate": true
-    },
-    {
-      "id": "feb5bxvGq2SrtZan1Tzb",
+      "id": "9aSZWZH5TWc86H0u0Vvr",
       "ean": "6410105909063",
       "name": "Bonus savuketupakka 30g Vaalea Klassikko",
       "purchase_date": "2019-11-10/18",
-      "expired_date": "2019-11-20",
+      "expired_date": "2019-11-17",
       "suggestedExpDate": true
     },
     {
-      "id": "snEEFzeLhjY7NufpOEoD",
+      "id": "ui1ex4S7n3mhGkP5oWgL",
       "ean": "6410105909063",
       "name": "Bonus savuketupakka 30g Vaalea Klassikko",
+      "purchase_date": "2019-11-10/18",
+      "expired_date": "2019-11-16",
+      "suggestedExpDate": true
+    },
+    {
+      "id": "tp5bpmLHwomO735qTnC0",
+      "ean": "6413605142152",
+      "name": "Karjala olut 4,5% 0,33l tlk 8-pack",
+      "purchase_date": "2019-11-10/18",
+      "expired_date": "2019-11-16",
+      "suggestedExpDate": true
+    },
+    {
+      "id": "tMixsoSYJnqFptkIOWb2",
+      "ean": "6410405070463",
+      "name": "Pirkka lenkki 540g TK",
       "purchase_date": "2019-11-10/18",
       "expired_date": "2019-11-18",
       "suggestedExpDate": true
     },
     {
-      "id": "IafzhreVnU0iucqvBfHt",
-      "ean": "6411402106407",
-      "name": "Oululainen jälkiuunipala 8kpl 480g",
-      "purchase_date": "2019-11-12/17",
-      "expired_date": "2019-11-20",
-      "suggestedExpDate": true
-    },
-    {
-      "id": "i1OtAYTyfxVbAXA5d4FE",
-      "ean": "6410405105448",
-      "name": "Pirkka punajuurisalaatti 400g kevyt",
-      "purchase_date": "2019-11-12/17",
+      "id": "Vnib5YJSzdXhwL2IHTda",
+      "ean": "6410405224538",
+      "name": "Pirkka Essi Tuottajalle kiitos mkassi TK",
+      "purchase_date": "2019-11-10/18",
       "expired_date": "2019-11-17",
       "suggestedExpDate": true
     },
     {
-      "id": "UzfQdQKR04bRWkdCtjyt",
-      "ean": "6407810010160",
-      "name": "Atria PT kanan sisäfilee 600g pintamaust",
-      "purchase_date": "2019-11-12/17",
-      "expired_date": "2019-11-20",
-      "suggestedExpDate": true
-    },
-    {
-      "id": "CpXhj80hIi3CPLHyDomL",
-      "ean": "6410405197382",
-      "name": "Pirkka tomaattisose 70g",
-      "purchase_date": "2019-11-12/17",
-      "expired_date": "2019-11-17",
-      "suggestedExpDate": true
-    },
-    {
-      "id": "PrjpKTRt2sSagZsspZEo",
-      "ean": "6409100054243",
-      "name": "HK kevytlinja meetvursti 100g",
-      "purchase_date": "2019-11-12/17",
-      "expired_date": "2019-11-20",
-      "suggestedExpDate": true
-    },
-    {
-      "id": "kyQnmMc5by2fWb4NIaFX",
-      "ean": "6410402008896",
-      "name": "Pirkka porkkana 1kg Suomi 1lk",
-      "purchase_date": "2019-11-12/17",
-      "expired_date": "2019-11-22",
-      "suggestedExpDate": true
-    },
-    {
-      "id": "Qr4m08pwauGj2gXPE3Az",
-      "ean": "6410405120526",
-      "name": "Pirkka tomaattiketsuppi 730g",
-      "purchase_date": "2019-11-12/17",
-      "expired_date": "2019-11-20",
-      "suggestedExpDate": true
-    },
-    {
-      "id": "lCZX6TWUyU4HN15CUMF0",
-      "ean": "6413466080204",
-      "name": "Oululainen reissumies tumma 4kpl/280g",
-      "purchase_date": "2019-11-12/17",
+      "id": "aTiMrHyWysA8gUAnkLBw",
+      "ean": "2000973900008",
+      "name": "Tölkkipantti 0,15 eur kaikki koot",
+      "purchase_date": "2019-11-10/18",
       "expired_date": "2019-11-18",
       "suggestedExpDate": true
     },
     {
-      "id": "0ajndpPLcdzcjTcCwMfc",
-      "ean": "6410405197382",
-      "name": "Pirkka tomaattisose 70g",
-      "purchase_date": "2019-11-12/17",
+      "id": "RYimOvEC9qOUxIFmFwP9",
+      "ean": "2000973900008",
+      "name": "Tölkkipantti 0,15 eur kaikki koot",
+      "purchase_date": "2019-11-10/18",
+      "expired_date": "2019-11-16",
+      "suggestedExpDate": true
+    },
+    {
+      "id": "QQBcET85RaP0Ws85SMtG",
+      "ean": "2000973900008",
+      "name": "Tölkkipantti 0,15 eur kaikki koot",
+      "purchase_date": "2019-11-10/18",
       "expired_date": "2019-11-20",
       "suggestedExpDate": true
     },
     {
-      "id": "BznY8ytl7g5s9yR8lx54",
-      "ean": "6410405197382",
-      "name": "Pirkka tomaattisose 70g",
-      "purchase_date": "2019-11-12/17",
+      "id": "Eb9ntr9HbuaEMkTqcvNy",
+      "ean": "2000973900008",
+      "name": "Tölkkipantti 0,15 eur kaikki koot",
+      "purchase_date": "2019-11-10/18",
+      "expired_date": "2019-11-20",
+      "suggestedExpDate": true
+    },
+    {
+      "id": "F1HnRFpyYHDkon7GkWSy",
+      "ean": "2000973900008",
+      "name": "Tölkkipantti 0,15 eur kaikki koot",
+      "purchase_date": "2019-11-10/18",
+      "expired_date": "2019-11-17",
+      "suggestedExpDate": true
+    },
+    {
+      "id": "gLYdiMwqclI5HzJUQGUj",
+      "ean": "2000973900008",
+      "name": "Tölkkipantti 0,15 eur kaikki koot",
+      "purchase_date": "2019-11-10/18",
+      "expired_date": "2019-11-20",
+      "suggestedExpDate": true
+    },
+    {
+      "id": "JG949FI8g7xIXTdY2mq5",
+      "ean": "2000973900008",
+      "name": "Tölkkipantti 0,15 eur kaikki koot",
+      "purchase_date": "2019-11-10/18",
       "expired_date": "2019-11-19",
       "suggestedExpDate": true
     },
     {
-      "id": "WYFfxEKwPtHjLJ6pv4Ej",
-      "ean": "6410405197382",
-      "name": "Pirkka tomaattisose 70g",
-      "purchase_date": "2019-11-14/17",
-      "expired_date": "2019-11-24",
+      "id": "HOvXOjVjo3wDqwuXdSQz",
+      "ean": "2000973900008",
+      "name": "Tölkkipantti 0,15 eur kaikki koot",
+      "purchase_date": "2019-11-10/18",
+      "expired_date": "2019-11-15",
       "suggestedExpDate": true
     },
     {
-      "id": "ncwsVxwfeuAOgXrKee8D",
-      "ean": "6410405120526",
-      "name": "Pirkka tomaattiketsuppi 730g",
-      "purchase_date": "2019-11-14/17",
-      "expired_date": "2019-11-20",
-      "suggestedExpDate": true
-    },
-    {
-      "id": "zFIdpIxmTtj62ND2fzqd",
-      "ean": "6407810010160",
-      "name": "Atria PT kanan sisäfilee 600g pintamaust",
-      "purchase_date": "2019-11-14/17",
+      "id": "mOdcXfo6M7aDsoySH7NS",
+      "ean": "2000973900008",
+      "name": "Tölkkipantti 0,15 eur kaikki koot",
+      "purchase_date": "2019-11-10/18",
       "expired_date": "2019-11-19",
       "suggestedExpDate": true
     },
     {
-      "id": "gO06yeaIBBM5wLz73Q28",
-      "ean": "6407810010160",
-      "name": "Atria PT kanan sisäfilee 600g pintamaust",
-      "purchase_date": "2019-11-14/17",
-      "expired_date": "2019-11-21",
+      "id": "qBf3tqRYaN1tA7FC42U7",
+      "ean": "2000973900008",
+      "name": "Tölkkipantti 0,15 eur kaikki koot",
+      "purchase_date": "2019-11-10/18",
+      "expired_date": "2019-11-17",
       "suggestedExpDate": true
     },
     {
-      "id": "j5sbsHvY8smsFKEX6Qpv",
-      "ean": "6407810010160",
-      "name": "Atria PT kanan sisäfilee 600g pintamaust",
-      "purchase_date": "2019-11-14/17",
-      "expired_date": "2019-11-22",
+      "id": "NWKIdEdgA7ax2kzOOjlg",
+      "ean": "6410405224538",
+      "name": "Pirkka Essi Tuottajalle kiitos mkassi TK",
+      "purchase_date": "2019-11-10/18",
+      "expired_date": "2019-11-19",
       "suggestedExpDate": true
     },
     {
-      "id": "2fnVn0FSlDLdT5NoHQzN",
-      "ean": "6410405139184",
-      "name": "Pirkka pizzasuikale 250g",
-      "purchase_date": "2019-11-14/17",
+      "id": "LPwGUAOcMorAsv9sJL0Z",
+      "ean": "6410405070463",
+      "name": "Pirkka lenkki 540g TK",
+      "purchase_date": "2019-11-10/18",
       "expired_date": "2019-11-20",
+      "suggestedExpDate": true
+    },
+    {
+      "id": "sqr6uph1FMNsgw57UrXe",
+      "ean": "6410105909063",
+      "name": "Bonus savuketupakka 30g Vaalea Klassikko",
+      "purchase_date": "2019-11-10/18",
+      "expired_date": "2019-11-16",
+      "suggestedExpDate": true
+    },
+    {
+      "id": "XYQtlfvP7XEisUW9Gh2L",
+      "ean": "6410105909063",
+      "name": "Bonus savuketupakka 30g Vaalea Klassikko",
+      "purchase_date": "2019-11-10/18",
+      "expired_date": "2019-11-15",
       "suggestedExpDate": true
     }
   ]
